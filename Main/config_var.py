@@ -1,10 +1,4 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
-#
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
-#
-# All rights reserved.
+
 
 import os
 
@@ -41,15 +35,11 @@ class Config((object)):
     API_HASH = os.environ.get("API_HASH", None)
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    STRINGSESSION = os.environ.get("STRINGSESSION", None)
-    ASSISTANT_START_PIC = os.environ.get(
-        "ASSISTANT_START_PIC", "https://telegra.ph//file/92c1a600394c723db90fc.jpg"
+    STRING_SESSION = os.environ.get("STRINGSESSION", None)
+    MEOW_START_PIC = os.environ.get(
+        "MEOW_START_PIC", "https://telegra.ph//file/92c1a600394c723db90fc.jpg"
     )
-    STRINGSESSION_2 = os.environ.get("STRINGSESSION_2", None)
-    STRINGSESSION_3 = os.environ.get("STRINGSESSION_3", None)
-    STRINGSESSION_4 = os.environ.get("STRINGSESSION_4", None)
-    LOAD_UNOFFICIAL_PLUGINS = bool(strtobool(str(os.environ.get("LOAD_UNOFFICIAL_PLUGINS", False))))
-    PLUGIN_CHANNEL = os.environ.get("PLUGIN_CHANNEL", False)
+    
     TZ = os.environ.get("TZ", "Asia/Kolkata")
     MONGO_DB = os.environ.get("MONGO_DB", None)
     LOG_GRP = int(os.environ.get("LOG_GRP", False))
@@ -62,7 +52,7 @@ class Config((object)):
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     FBAN_GROUP = int(os.environ.get("FBAN_GROUP", False))
     UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/DevsExpo/FridayUserbot"
+        "UPSTREAM_REPO", "https://github.com/kaal0408/Meow"
     )
     ALIVE_IMG = os.environ.get(
         "ALIVE_IMG", "https://telegra.ph//file/7ad807cd9d562ae4f85d8.jpg"
@@ -72,11 +62,8 @@ class Config((object)):
     V_T_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
     TAG_LOGGER = os.environ.get("TAG_LOGGER", False)
     PM_PSW = bool(strtobool(str(os.environ.get("PM_PSW", True))))
-    MAIN_NO_LOAD = [x for x in os.environ.get("MAIN_NO_LOAD", "").split(',')]
-    XTRA_NO_LOAD = [x for x in os.environ.get("XTRA_NO_LOAD", "").split(',')]
     DISABLED_SUDO_CMD_S = os.environ.get("DISABLED_SUDO_CMD_S", None)
     ENABLE_WAIFU_FOR_ALL_CHATS = bool(strtobool(str(os.environ.get("ENABLE_WAIFU_FOR_ALL_CHATS", False))))
     CHROME_DRIVER_PATH = os.environ.get("CHROME_DRIVER_PATH", "/usr/bin/chromedriver")
     CHROME_BIN_PATH = os.environ.get("CHROME_BIN_PATH", "/usr/bin/google-chrome-stable")
     USERBOT_LANG = os.environ.get("USERBOT_LANG", "en")
-    XTRA_PLUGINS_REPO = os.environ.get("XTRA_PLUGINS_REPO", "https://github.com/DevsExpo/Xtra-Plugins")
