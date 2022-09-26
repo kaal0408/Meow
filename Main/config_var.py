@@ -35,9 +35,9 @@ class Config((object)):
     API_HASH = os.environ.get("API_HASH", None)
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    STRING_SESSION = os.environ.get("STRINGSESSION", None)
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
     MEOW_START_PIC = os.environ.get(
-        "MEOW_START_PIC", "https://telegra.ph//file/92c1a600394c723db90fc.jpg"
+        "MEOW_START_PIC", "https://telegra.ph/file/3c2932815330a143fa1a8.png"
     )
     
     TZ = os.environ.get("TZ", "Asia/Kolkata")
