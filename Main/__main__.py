@@ -39,10 +39,13 @@ Meow.me = await Meow.get_me()
 Meow.selected_lang = await check_lang()
 LangEngine = Engine()
 LangEngine.load_language()
-Meow.has_a_bot = bool(bot)       
-await Friday.start()
-await bot.start()
+Meow.has_a_bot = bool(bot)  
+     
+Meow.start()
+Meow.join_chat("Kaalxsupport")
+bot.start()
     
-    
+print("Your Meow  Successfully Deployed ✅")
+  
 
 
