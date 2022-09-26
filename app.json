@@ -1,17 +1,17 @@
 {
-  "name": "Friday-Userbot",
+  "name": "Meow-Userbot",
   "description": "A Userbot Based On Pyrogram.",
   "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
   "keywords": [
     "telegram",
-    "fridaybot",
+    "meow",
     "plugin",
-    "fridaybot",
+    "meowbot",
     "productivity"
   ],
-  "repository": "https://github.com/starkgang/FridayUserbot",
-  "website": "t.me/fridayot",
-  "success_url": "t.me/FridayOT",
+  "repository": "https://github.com/kaal0408/Meow",
+  "website": "t.me/Murat_30",
+  "success_url": "t.me/Murat_30",
   "stack": "container",
   "env": {
     "API_ID": {
@@ -26,15 +26,6 @@
       "description": "Create A Database In Mongodb And Get URL. Make Sure To Enter Correct URL!",
       "value": ""
     },
-    "COMMAND_HANDLER": {
-      "description": "Your Command Handler.",
-      "value": ".",
-      "required": false
-    },
-    "LOAD_UNOFFICIAL_PLUGINS": {
-      "description": "Do You Wish To Load X-Tra Plugins?",
-      "value": "True"
-    },
     "LOG_GRP": {
       "description": "A Group ID Where You Want To Log Important Logs.",
       "value": ""
@@ -46,11 +37,6 @@
     "HEROKU_APP_NAME": {
       "description": "Heroku App Name That You Filled Above.",
       "value": ""
-    },
-    "UPSTREAM_REPO": {
-      "description": "Your Upstream URL HERE. If You're Beginner, Don't Change This.",
-      "value": "https://github.com/DevsExpo/FridayUserBot",
-      "required": false
     },
     "BOT_TOKEN": {
       "description": "Your Bot Token Obtained From @BotFather. This is Not Important",
