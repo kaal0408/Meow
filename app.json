@@ -47,7 +47,7 @@
       "description": "Your Time Zone",
       "value": "Asia/Kolkata"
     },
-    "STRINGSESSION": {
+    "STRING_SESSION": {
       "description": "String Session, Run string_gen.py to get String Session.",
       "value": ""
     }
