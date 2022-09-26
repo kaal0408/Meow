@@ -54,9 +54,8 @@ class Config((object)):
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/kaal0408/Meow"
     )
-    ALIVE_IMG = os.environ.get(
-        "ALIVE_IMG", "https://telegra.ph//file/7ad807cd9d562ae4f85d8.jpg"
-    )
+    ALIVE_PIC = os.getenv("ALIVE_PIC", "")
+    ALIVE_MSG = os.getenv("ALIVE_MSG", "")
     U_BRANCH = "master"
     HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
     V_T_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
