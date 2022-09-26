@@ -1,10 +1,3 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
-#
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
-#
-# All rights reserved.
 
 import time
 import logging
@@ -15,7 +8,7 @@ from .config_var import Config
 # Note StartUp Time - To Capture Uptime.
 
 start_time = time.time()
-friday_version = "V9.0"
+meow_version = "V1.0"
 
 # Enable Logging For Pyrogram
 logging.basicConfig(
@@ -29,61 +22,35 @@ logging.getLogger("apscheduler").setLevel(logging.ERROR)
 mongo_client = motor.motor_asyncio.AsyncIOMotorClient(Config.MONGO_DB)
 
 CMD_LIST = {}
-XTRA_CMD_LIST = {}
 sudo_id = Config.AFS
 
-if not Config.STRINGSESSION:
-    logging.error("No String Session Found! Friday is Exiting!")
+if not Config.STRING_SESSION:
+    logging.error("No String Session Found!  Exiting!")
     quit(1)
 
 if not Config.API_ID:
-    logging.error("No Api-ID Found! Friday is Exiting!")
+    logging.error("No Api-ID Found!  Exiting!")
     quit(1)
 
 if not Config.API_HASH:
-    logging.error("No ApiHash Found! Friday is Exiting!")
+    logging.error("No ApiHash Found!  Exiting!")
     quit(1)
 
 if not Config.LOG_GRP:
-    logging.error("No Log Group ID Found! Friday is Exiting!")
+    logging.error("No Log Group ID Found!  Exiting!")
     quit(1)
 
 
-# Clients - Upto 4 Clients is Supported!
-if Config.STRINGSESSION:
+
+if Config.STRING_SESSION:
     Friday = Client(
-        Config.STRINGSESSION,
+        Config.STRING_SESSION,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
+        plugins=dict(root="Main.Modules"))
         sleep_threshold=180,
     )
-if Config.STRINGSESSION_2:
-    Friday2 = Client(
-        Config.STRINGSESSION_2,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        sleep_threshold=180,
-    )
-else:
-    Friday2 = None
-if Config.STRINGSESSION_3:
-    Friday3 = Client(
-        Config.STRINGSESSION_3,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        sleep_threshold=180,
-    )
-else:
-    Friday3 = None
-if Config.STRINGSESSION_4:
-    Friday4 = Client(
-        Config.STRINGSESSION_4,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        sleep_threshold=180,
-    )
-else:
-    Friday4 = None
+
 
 if Config.BOT_TOKEN:
     bot = Client(
@@ -91,6 +58,7 @@ if Config.BOT_TOKEN:
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         bot_token=Config.BOT_TOKEN,
+        plugins=dict(root="Main.Assistant"))
         sleep_threshold=180,
     )
 else:
