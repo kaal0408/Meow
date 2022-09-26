@@ -5,4 +5,4 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 COPY . .
 RUN bash startup.sh
-ENTRYPOINT ["python3", "-m", "main"]
+ENTRYPOINT ["python3", "-m", "Main"]
