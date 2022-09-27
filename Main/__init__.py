@@ -41,21 +41,22 @@ if not Config.LOG_GRP:
     quit(1)
 
 
+Meow = Client(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    session_name= STRING_SESSION,
+    plugins=dict(root="Main.Modules")
+)
 
-if Config.STRING_SESSION:
-    Meow = Client(
-        Config.STRING_SESSION,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        plugins=dict(root="Main.Modules"))
+bot = Bot(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token= BOT_TOKEN,
+    plugins=dict(root="Main.Assistant")
+)
 
 
-if Config.BOT_TOKEN:
-    bot = Client(
-        "MyAssistant",
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        bot_token=Config.BOT_TOKEN,
-        plugins=dict(root="Main.Assistant"))
-else:
-    bot = None
+
+
