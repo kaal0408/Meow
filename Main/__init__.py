@@ -21,6 +21,11 @@ logging.getLogger("apscheduler").setLevel(logging.ERROR)
 
 mongo_client = motor.motor_asyncio.AsyncIOMotorClient(Config.MONGO_DB)
 
+# <-- Configuration Import -->
+API_ID = Config.API_ID
+API_HASH = Config.API_HASH
+BOT_TOKEN = Config.BOT_TOKEN
+SESSION = Config.STRING_SESSION
 CMD_LIST = {}
 sudo_id = Config.AFS
 
@@ -40,21 +45,23 @@ if not Config.LOG_GRP:
     logging.error("No Log Group ID Found!  Exiting!")
     quit(1)
 
-
+# <-- User Client -->
 Meow = Client(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    session_name= STRING_SESSION,
-    plugins=dict(root="Main.Modules")
+    session_string=SESSION,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    in_memory=True,
+    plugins={'root' = "Main.Modules"}
 )
 
-bot = Bot(
-    ":memory:",
-    API_ID,
-    API_HASH,
+# <-- Assistant Client -->
+
+bot = Client(
+    "LoverBoyXD",
+    api_id= API_ID,
+    api_hash= API_HASH,
     bot_token= BOT_TOKEN,
-    plugins=dict(root="Main.Assistant")
+    plugins= {"root" ="Main.Assistant"}
 )
 
 
