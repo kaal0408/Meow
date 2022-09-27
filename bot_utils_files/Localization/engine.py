@@ -26,7 +26,7 @@ class Engine:
         logging.debug("All language Loaded.")
         
     def get_string(self, string):
-        lang_ = Friday.selected_lang
+        lang_ = Meow.selected_lang
         return (
             language_string.get(lang_).get(string)
             or f"**404_STRING_NOT_FOUND :** `String {string} Not Found in {lang_} String 	File. - Please Report It To @Murat_30`"
