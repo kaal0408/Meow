@@ -16,7 +16,7 @@ from database.bot_settings_db import (
     set_pm_spam_limit,
 )
 from database.pmdb import approve_user, disapprove_user, is_user_approved
-from Main.core.decorators import friday_on_cmd, listen
+from Main.core.decorators import meow_on_cmd, listen
 from Main import Config
 from Main.helper_func.basic_helpers import edit_or_reply, get_text
 from Main.helper_func.logger_s import LogIt
