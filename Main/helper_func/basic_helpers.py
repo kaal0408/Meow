@@ -20,7 +20,7 @@ import mimetypes
 import functools
 import multiprocessing
 from database.sudodb import sudo_list
-from main_startup.config_var import Config
+from Main.config_var import Config
 from concurrent.futures import ThreadPoolExecutor
 from Main import Meow
 
@@ -122,7 +122,7 @@ def get_readable_time(seconds: int) -> int:
 async def get_all_pros() -> list:
     """Get All Users , Sudo + Owners + Other Clients"""
     users = await sudo_list()
-    current_user = Friday.me
+    current_user = Meow.me
     users.append(current_user.id)
     return users
 
