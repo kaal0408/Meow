@@ -424,7 +424,7 @@ async def fetch_audio(_, message):
         )
         ffmpeg_cmd = f"ffmpeg -i {file_path} -map 0:a friday.mp3"
         await run_cmd(ffmpeg_cmd)
-        final_warner = "friday.mp3"
+        final_warner = "meow.mp3"
     elif replied.audio:
         await message.edit("`Download Started !`")
         final_warner = await message.reply_to_message.download(
