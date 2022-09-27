@@ -6,9 +6,19 @@
 #
 # All rights reserved.
 
-import logging
+from database import db_x
 
-from main_startup import mongo_client
-from main_startup.config_var import Config
+bot = db_x["BOT_USERS"]
 
-db_x = mongo_client["Friday"]
+
+async def add_user(user_id):
+    await bot.insert_one({"user_id": user_id})
+
+
+async def check_user(user_id):
+    Lol = await bot.find_one({"user_id": user_id})
+    return bool(Lol)
+
+
+async def get_all_users():
+    return [s async for s in bot.find()]
