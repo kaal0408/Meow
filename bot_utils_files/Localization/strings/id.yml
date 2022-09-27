@@ -1,0 +1,222 @@
+language: "id"
+written_by: [Yoga_CIC, zYxDx]
+
+AFK_1: "**Tuan Saya Sedang Sibuk 👀.** \n__Dia AFK Karena__ `{}`"
+NEEDS_REPLY: "**400_REPLY_TO_MESSAGE :** `Harap Balas Ke {}.`"
+AFK_2: "#AfkLogger AFK Dinyalakan dan Alasannya {}"
+AFK_3: "**Saya Sibuk dan Saya Akan AFK**."
+AFK_4: "__Pro Kembali Online__\n**Tidak lagi afk.**\n `Saya afk karena: {}`"
+AFK_5: "#AfkLogger User Kembali Online ! Tidak Lagi Afk\n AFK Selama : {}"
+INPUT_REQ: "**400_EXPECTED_INPUT:** `Input Tidak Ditemukan.` **Expected :** `{}`"
+INVALID_CHAT_ID: "**404_INVALID_CHAT_ID:** `Chat ID Tidak Benar. Tolong Pastikan ID Benar & Anda Didalam Chat Tersebut.`"
+CHAT_ALREADY_IN_DB: "`Chat ini sudah di DB saya & Tidak Ada alasan untuk menambahkan lagi.`"
+AUTOPOSTING_1: "`Ok, Saya akan autoposting semua konten dari {} Kemari.`"
+AUTOPOSTING_2: "`Ok, Saya tidak akan autoposting konten dari {}."
+CHAT_NOT_IN_DB: "`Chat ini tidak ada di database, yahaha hayyuk.`"
+BLACKLIST_1: "`Input yang diberi sudah dalam daftar hitam disini.`"
+BLACKLIST_2: "`Berhasil menambahkan {} Ke daftar hitam DB.`"
+BLACKLIST_3: "`Tidak ada daftar hitam disini, Mau menambahkan?`"
+BLACKLIST_4: "**Daftar hitam disini:** \n"
+BLACKLIST_5: "`Input yang diberi tidak ada di daftar hitam DB.`"
+BLACKLIST_6: "`Menghapus : {} dari daftar hitam DB`"
+BLACKLIST_7: "**Blacklist Warning**\n\n**Chat :** `{}` - `{}`"
+BLACKLIST_8: "`Semua daftar hitam disini Berhasil dihapus!`"
+BROADCAST_1: "`Berhasil menambahkan {} Groups/Channels ke DB.\nTotal Groups/Channels di dB - {}`"
+BROADCAST_2: "`Menambahkan semua Chat ke DB.`"
+BROADCAST_3: "`Menambahkan {} ke daftar Broadcast.`"
+BROADCAST_4: "`Menghapus {} dari daftar Broadcast`"
+BROADCAST_5: "`Menghapus {} tidak ada Chat dari daftar Broadcast`"
+BROADCAST_6: "**Baiklah. Broadcasting dalam proses. Tunggu ya!**"
+BROADCAST_7: "`Tidak ada Channel atau Group Ditemukan dalam Database. Coba Lagi`"
+REPLY_MSG: "**408_REPLY_TO_MESSAGE:** `Harap Balas ke pesan.`"
+BROADCAST_8: "`Berhasil Broadcast ke {} groups/channels. Gagal {}`"
+FILTER_1: "**404_{}_NOT_FOUND:** `{} Tidak Ditemukan dalam database`"
+FILTER_2: "`{} {} dihapus dari Database.`"
+FILTER_3: "`Tidak {} Ditemukan disini.`"
+LIST_OF: "`Daftar untuk {} di {} :` \n{}"
+FILTER_5: "`Menambahkan {} ke database {} saya.`"
+REMOVED_ALL: "`Menghapus semua {} dari Chat`"
+FILE_TOOLS_1: "`Menyusun file dari chat ini.`"
+FILE_TOOLS_2: "**Total Media :** `{}` \n**Downloaded Media :** `{}` \n**Total Texts Appended :** `{}` \n**Now Zipping Files.**"
+FILE_TOOLS_3: "`File Lebih dari 2GB, Telegram tidak mengijinkan. Mencoba untuk membagi file!`"
+FILE_TOOLS_5: "__Mendownload file ini ke__ `{}` __dalam__ `{}`."
+FILE_TOOLS_6: "`Balas ke gambar untuk set sebagai thumbnail file yang diupload!`"
+FILE_TOOLS_7: "`Ya! Custom Thumb diset, semua file akan diupload dengan thumbnail ini!`"
+F_404: "`404 : File tidak ditemukan.`"
+GPS_1: "`Harap sertakan lokasi untuk GPS!`"
+GPS_2: "**404_LOCATION_NOT_FOUND:** `Lokasi tidak ditemukan.`"
+NOT_ADMIN: "`Kau bukan admin. Ngemis jadi admin dulu sana`"
+REQ_PERM: "**400_NO_PERM :** `Perintah ini membutuhkan {} untuk bekerja.`"
+REPLY_TO_PIN: "`Balas ke pesan yang ingin di Pin!`"
+UNABLE_TO_PIN: "Gagal pin pesan` \n**Error :** `{}`"
+PINNED: "`Pesan Berhasil dipin!`"
+UNPINNED: "`Semua pesan pin berhasil dilepas."
+UNABLE_TO_UNPIN: "__Gagal melepaskan pin.__ \n**Error :** `{}`"
+CANT_FETCH_ADMIN: "Gagal Fetch Chat {}, \n\n**TraceBack :** `{}`"
+TOTAL_ZOMBIES_USERS: "**Total Akun mati (Members) :** `{}` \n"
+TOTAL_ZOMBIES_ADMINS: "\n**Total Akun mati (Admins) :** `{}` \n"
+GRP_OWNER_IS_ZOMBIE: "\n__Pemilik percakapan sudah mokad :/__ \n"
+WIPE_THEM: "\n\nHapus Akun mati dengan Perintah `.zombies clean`!"
+NO_ZOMBIES: "`Akun mati tidak ditemukan, Grup bersih ngab 😊`"
+REMOVED_ZOMBIES: "`Menghapus {} Akun mati!`"
+FAILED_ZOMBIES: "\nGagal Menghapus {} Akun mati, mungkin mereka admin atau pemilik Chat"
+TO_DO: "`Bruh, Balas ke pengguna / Berikan username atau ID untuk {}!`"
+USER_MISSING: "**400_BAD_USER :** `Pengguna tidak Benar : {}`"
+TF_DO_IT: "🙄 Ide yang bagus, Ayo {} Diri sendiri."
+FAILED_ADMIN_ACTION: "Tidak dapat {} Pengguna Tersebut` \n**Error :** `{}`"
+DONE_LOG: "**#{}** \n**User :** [{}](tg://user?id={}) \n**Chat :** `{}` \n**Reason :** `{}`"
+PURGE_: "**>> Flash Purge Selesai!** \n**>> Total Pesan Dipurge :** `{}` \n**>> Waktu Dibutuhkan :** `{}`"
+INVALID_MEDIA: "`Pesan ini tidak didukung.`"
+DONE_: "`Selesai! Berhasil menjadikan foto ini sebagai PP disini`"
+WAIT: "`Harap tunggu...\n@Yoga_CIC`"
+PROCESSING: "`Memproses...\n@Yoga_CIC`"
+REPLY_TO_USER: "Balas ke pesan atau tag untuk {} dia`"
+SUDO_CANT: "Sudo Users Tidak dapat {}! Hapus dia dan coba lagi!"
+NO_CHATS: "`Kamu tidak memiliki chat! Kasian NOLEP`"
+GBAN_START: "`Memulai GBan sekarang!`"
+HELP_OPEN_ERROR: "`Tidak dapat membuka pesan bantuan disini.` \n**ERROR :** `{}`"
+PLUGIN_NOT_FOUND: "<code>404: Plugin tidak ditemukan!</code>"
+CMD_LIST_MENU: "<b><u>📡 Daftar Perintah Friday 📡</b></u> \n\n<b>⚒ Perintah Utama ({}) :</b> \n\n"
+CMD_LIST_MENU2: "\n\n<b>⚒ Perintah Ekstra ({}) :</b> \n\n"
+KNOW_MORE_ABOUT_PLUGIN: "\n\nGunakan <code>{}ahelp (cmd-name)</code> Untuk mengetahui fungsi Plugin."
+MISSING_API_KEY: "**404_KEY_MISSING :** `Perintah ini membutuhkan {} untuk bekerja!`"
+HEROKU_DONT_MATCH: "`Heroku Api Key dan App Name Tidak benar!`"
+USAGE: "**Ini Perintah yang dapat digunakan :** `{}`"
+VAR_ADDED: "`Variable {} Ditambahkan dengan Value {}!`"
+DE: "`{} Tidak ditemukan!`"
+DLTED_VAR: "`Berhasil Menghapus {} Var!`"
+REPLY_TO_INSTALL: "`Balas ke file .py untuk pasang Plugin!`"
+IS_NOT_DOC: "`Apakah ini benar dokumen?`"
+ALREADY_INSTALLED: "`Plugin ini sudah dipasang!`"
+ONLY_PY_FILES: "`Hanya .py file :(`"
+ERROR_INSTALLING: "__Error Saat memasang Plugin.__\n**Error :** `{}`"
+PLUGIN_INSTALLED: "`Berhasil memasang {}!`"
+IAM_ADMIN: "Saya admin di Groups & Channels ini \n{}"
+NOT_ADDED: "`Catatan {} Berhasil dihapus!`"
+GET_WITH: "Dapatkan catatan dengan `#NamaCatatan`"
+PASTED: "Dipaste ke [HasteBin]({}) dan Raw [Tekan Disini]({})"
+SET_PM_TEXT: "`Pm Permit Tidak aktif. Mau menambahkan?`"
+TO_SET_CUSTOM_TEXT: "`Balas ke Pesan atau Berikan Text Sebagai Input Untuk Menetapkan Sebagai Custom PM Text`"
+PM_MSG_CHANGED: "Pesan PM Berhasil diganti menjadi `{}`"
+SET_PM_LIMIT: "`PM Permit Dinonaktifkan. Untuk apa Mengaktifkan PM Limit?`"
+TO_SET_PM_LIMIT: "`PM Limit Harus Angka Antara 3-20`"
+SUCCESS_CHANGED: "PM Limit berhasil diubah ke `{}`"
+TO_BLOCK: "`Balas ke pengguna untuk {} ia !`"
+HACK_APPROVED: "`PM Permit Dinonaktifkan. Apa Fungsinya {} Pengguna?`"
+USR_ALREADY_APPROVED: "`Pengguna Sudah Diizinkan!`"
+USR_NOT_APPROVED: "`Pengguna Ini Tidak Diizinkan!`"
+APPROVED_TO_PM: "Mengijinkan PM dari [{}](tg://user?id={})"
+UNABLE_TO_CONVERT: "`Tidak dapat mengkonversi ke gambar, Gunakan media yang didukung!`"
+SET_DONE_IMAGE: "`Berhasil menjadikan gambar ini sebagai PM Pic!`"
+RENAME_INPUT: "`Berikan nama baru untuk file, beserta extensinya (ex: friday.mp3)`"
+R_P: "⚡️`Menamai ulang dan mengupload sedang dalam proses, Harap tunggu!`⚡️"
+RENAME_DONE: "__File berhasil dinamai ulang dan diupload. Oleh FridayUserBot. Pasang FridayUserBot milikmu sendiri di__ @fridaychat, Translator: @Yoga_CIC"
+G_S: "**Kata Kunci Pencarian:**\n `{}` \n\n**Hasil:**\n {}"
+DUCK_DUCK_GO: "Biarkan saya 🦆 DuckDuckGo ini untuk anda:\n🔎 [{}]({})"
+STATS: "`Stats anda dikalkulasikan dalam {} detik`
+`Anda Memiliki {} Pesan Pribadi.`
+`Anda didalam {} Grup.`
+`Anda didalam {} Super Grup.`
+`Anda didalam {} Saluran.`
+`Anda admin di {} Percakapan.`
+`Jumlah Bot = {}`"
+REPLY_TO_STICKER: "`Balas ke Sticker...`"
+KANG_MAGIC_: "`Menggunakan Kekuatan Sharinggan Itachi Untuk Mencuri Stiker...`"
+KANG_FULL: "Kang Pack Vol __{}__ Penuh! Pindah ke Vol __{}__ Kang Pack"
+ADDED_STICKER: "Sticker Berhasil Ditambahkan, Emoji: - {}. Lihat Sticker anda [Disini](https://t.me/addstickers/{})\nTranslator: @Yoga_CIC"
+TELEGRAPH_UP_FAILED: "__Gagal Upload ke Telegraph!__ \n**TraceBack :** `{}`"
+TELEGRAPH: "Diupload ke Telegraph! \nLink : https://telegra.ph/{}\nTranslator: @Yoga_CIC"
+FIRST_NAME_CHANGE_FAILED: "`[Failed] - Gagal Mengganti Nama {}` \n**TraceBack :** `{}`"
+FIRST_NAME_CHANGED: "`{} Berhasil Mengganti Ke {} !`"
+ADDED_CONTACT: "`Menambahkan {} Ke Kontak!`"
+UNABLE_TO_ADD_USER: "`Gagal Menambahkan Pengguna! \nTraceBack : {}`"
+ADDED_USER: "Berhasil Menambahkan {} Ke Grup/Channel ini\nTranslator: @Yoga_CIC!`"
+PURGED_MY_MSG: "`Purged {} Pesan!`"
+TO_PURGE: "`Tidak memberikan pesan untuk Dihapus :/`"
+FAILED_TO_JOIN: "`[Failed] - Gagal Bergabung ke Percakapan` \n**TraceBack :** `{}`"
+JOINED: "`Berhasil Bergabung ke Percakapan.`"
+REPLY_TO_MSG: "`Balas ke Gambar / Video untuk Set Sebagai PP`"
+UPDATE_PIC: "`[Failed] - Tidak dapat Mengubah PP` \n**TraceBack :** `{}`"
+PIC_DONE: "`Berhasil Mengubah PP!`"
+REQ_POLL: "`Berikan Pertanyaan & Pilihan! Lihat bantuan`"
+A_POLL_NEEDS: "`Poll membutuhkan setidaknya 1+ Pilihan!`"
+GIVE_OPTIONS: "`Berikan Pilihan :/`"
+UPDATING_PLS_WAIT: "`Gass, Update Ngab, Translator: @Yoga_CIC!`"
+INVALID_GIT_CMD: "`Perintah Git Tidak Benar. Harap Lapor Ke @FridayOT`"
+CUSTOM_BRANCH: "`Sepertinya anda menggunakan branch sendiri - {}! Ganti ke {} Agar update sukses!`"
+HEROKU_DETECTED: "`Heroku terdeteksi, Harap tunggu!`"
+UPDATED: "`Update berhasil, Tunggu beberapa menit untuk Restart`"
+UPDATER_ERROR: "**Update Gagal** \nTraceBack : `{}`"
+REPLY_TO_WELCOME: "`Balas ke pesan untuk mengatur sebagai pesan selamat datang`"
+WELCOME_SAVED: "`Pesan selamat datang disimpan!`"
+YANDEX: "<b>Pencarian Berhasil</b>
+Link:- {}
+> <code>Yandex adalah mesin pencari rusia, gunakan chrome untuk auto-translate.</code>
+"
+IMG_NOT_FOUND: "Gambar tidak ditemukan {}"
+REVERSING: "`Hmm... Mencari hasil yang cocok {}...🚶`"
+LOOKING_FOR_IMG: "[{}]({})\n\n`Sedang Mencari hasil...`"
+PROCESS_FAILED: "`Gagal, Google sedang PMS."
+INVALID_RC_LANG: "`Bahasa tidak valid!`"
+RC_OUTPUT_R: "**▶ Code :** \n`{}` 
+**▶ Hasil :** 
+`{}`
+**▶ Eror :** 
+`{}`
+**▶ Status :**
+ `{}`
+**▶ Berhasil :** 
+ `{}`
+**▶ Peringatan :** 
+ `{}`
+**▶ Alasan :**
+ `{}`
+"
+RC_OUTPUT: "**▶ Code :** \n`{}` 
+**▶ Hasil :** 
+`{}`
+**▶ Eror :** 
+`{}`
+**▶ Status :**
+ `{}`
+**▶ Berhasil :** 
+ `{}`
+**▶ Peringatan :** 
+ `{}`
+"
+BASH_OUT: "**▶ CMD :**
+`{}`
+**▶ PID :**
+`{}`
+**▶ Eror (If Any) :**
+`{}`
+**▶ Keluaran / Hasil (If Any) :**
+`{}`
+**▶ Kode :** 
+`{}`
+"
+EVAL: "**▶ Code :** \n`{}` \n\n**▶ Output / TraceBack :** \n`{}`"
+NEEDS_C_INPUT: "`Input tidak valid. Lihat pesan bantuan.`"
+UNSUPPORTED: "`Input tidak didukung, : {}`"
+TOO_BIG: "`Telegram limit, Output di pindah ke` [DogBin]({})"
+YTDL_FAILED: "**Youtube Download Gagal!** \n**Error :** `{}`"
+NO_RESULTS: "`Hasil tidak ditemukan {}, Berikan input yang lebih spesifik.`"
+GETTING_RESULTS: "`Mencari hasil untuk {}. Harap tunggu.`"
+ALIVE_: "
+**{}'s Friday-UserBot Aktif!**\n\n
+\n➔ **Versi :** __{}__
+\n➔ **Durasi Aktif :** __{}__
+\n➔ **PyroGram Versi :** __{}__
+\n➔ **Python Versi :** __{}__
+\n➔ **OS :** __{}__
+\n➔ **CPU :** __{}__
+\n➔ **PENGGUNAAN DISK :** __{}__
+"
+RESTART: "`🔄 Memulai ulang.. 🔄`"
+USER_ALREADY_IN_SUDODB: "`Pengguna ini - {} Sudah ada di Sudo DB. Tidak dapat menambahkan lagi.`"
+ADDED_TO_SUDO: "`Menambahkan` {} `Ke Sudo Database. Silakan restart.`"
+USER_ALREADY_NOT_IN_SUDODB: "`Pengguna ini -` {} `Tidak ada di Sudo DB. Tidak dapat menghapus.`"
+RM_FROM_SUDO: "`Menghapus` {} `Dari Sudo Database. Silakan restart.`"
+LIST_OF_SUDO: "`Daftar Pengguna Sudo :\n\n`"
+USER_ALREADY_APPROVED: "`Pengguna` {} `Sudah diizinkan.`"
+USER_NOT_APPROVED: "`Pengguna` {} `Tidak diizinkan.`"
