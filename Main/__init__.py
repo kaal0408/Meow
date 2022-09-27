@@ -48,7 +48,6 @@ if Config.STRING_SESSION:
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         plugins=dict(root="Main.Modules"))
-        sleep_threshold=180,
     )
 
 
@@ -59,7 +58,6 @@ if Config.BOT_TOKEN:
         api_hash=Config.API_HASH,
         bot_token=Config.BOT_TOKEN,
         plugins=dict(root="Main.Assistant"))
-        sleep_threshold=180,
     )
 else:
     bot = None
