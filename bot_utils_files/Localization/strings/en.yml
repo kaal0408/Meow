@@ -76,8 +76,7 @@ NO_CHATS: "`You Have No Chats! So Sad`"
 GBAN_START: "`Starting GBans Now!`"
 HELP_OPEN_ERROR: "`Unable To Open Help Menu Here.` \n**ERROR :** `{}`"
 PLUGIN_NOT_FOUND: "<code>404: Plugin Not Found!</code>"
-CMD_LIST_MENU: "<b><u>📡 Friday Command List 📡</b></u> \n\n<b>⚒ Main Command List ({}) :</b> \n\n"
-CMD_LIST_MENU2: "\n\n<b>⚒ Xtra Command List ({}) :</b> \n\n"
+CMD_LIST_MENU: "<b><u>📡 Meow Command List 📡</b></u> \n\n<b>⚒ Main Command List ({}) :</b> \n\n"
 KNOW_MORE_ABOUT_PLUGIN: "\n\nUse <code>{}ahelp (cmd-name)</code> To Know More About A Plugin."
 MISSING_API_KEY: "**404_KEY_MISSING :** `This Command Needs {} To Work!`"
 HEROKU_DONT_MATCH: "`Heroku Api Key And App Name Doesn't Match!`"
@@ -110,7 +109,7 @@ UNABLE_TO_CONVERT: "`Unable To Convert To Image, Perhaps Use Some Supported Medi
 SET_DONE_IMAGE: "`Sucessfully Set This Image As Pm Permit Media!`"
 RENAME_INPUT: "`Please Give New Name For File With Extension`"
 R_P: "⚡️`Rename and upload in progress, please wait!`⚡️"
-RENAME_DONE: "__File Renamed and Uploaded. By FridayUserBot. Get your FridayUserBot from__ @fridaychat"
+RENAME_DONE: "__File Renamed and Uploaded. By MeowUserBot. Get your MeowUserBot from__ @Murat_30"
 G_S: "**Search Query:**\n `{}` \n\n**Results:**\n {}"
 DUCK_DUCK_GO: "Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})"
 STATS: "`Your Stats Obtained in {} seconds`
@@ -142,7 +141,7 @@ REQ_POLL: "`Give Me Question & Options! See Help For More`"
 A_POLL_NEEDS: "`A Poll Needs 1+ Options!`"
 GIVE_OPTIONS: "`Give Me Options :/`"
 UPDATING_PLS_WAIT: "`Updating Please Wait!`"
-INVALID_GIT_CMD: "`Invalid Git Command. Please Report This Bug To @FridayOT`"
+INVALID_GIT_CMD: "`Invalid Git Command. Please Report This Bug To @Murat_30`"
 CUSTOM_BRANCH: "`Seems Like You Are Using Custom Branch - {}! Please Switch To {} To Make This Updater Function!`"
 HEROKU_DETECTED: "`Heroku Detected! Pushing, Please Halt!`"
 UPDATED: "`Updated Sucessfully! Give Me A min To Restart!`"
@@ -209,7 +208,7 @@ YTDL_FAILED: "**Youtube Download Failed!** \n**Error :** `{}`"
 NO_RESULTS: "`No Results Found For {}, Perhaps, You Can Be More Specific.`"
 GETTING_RESULTS: "`Searching Results Matching For {}. Please Wait.`"
 ALIVE_: "
-**{}'s Friday-UserBot is Alive!**\n\n
+**{}'s Meow-UserBot is Alive!**\n\n
 
 \n➔ **Version :** __{}__
 \n➔ **Uptime :** __{}__
