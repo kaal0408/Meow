@@ -3,7 +3,7 @@
 import logging
 import yaml     
 import pathlib
-from main_startup import Friday
+from Main import Meow
 
 language_string = {}
 
