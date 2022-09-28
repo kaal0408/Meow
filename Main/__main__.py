@@ -31,10 +31,6 @@ async def mongo_check():
         quit(1)
 
 
-        
-Meow.selected_lang = check_lang()
-LangEngine = Engine()
-LangEngine.load_language() 
      
 Meow.start()
 Meow.join_chat("Kaalxsupport")
