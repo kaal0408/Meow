@@ -51,7 +51,7 @@ Meow = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     in_memory=True,
-    plugins={'root' = "Main.Modules"}
+    plugins={'root': "Main.Modules"}
 )
 
 # <-- Assistant Client -->
@@ -61,7 +61,7 @@ bot = Client(
     api_id= API_ID,
     api_hash= API_HASH,
     bot_token= BOT_TOKEN,
-    plugins= {"root" ="Main.Assistant"}
+    plugins= {'root': "Main.Assistant"}
 )
 
 
