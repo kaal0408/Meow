@@ -1,5 +1,4 @@
 
-
 import logging
 import os
 import platform
@@ -33,12 +32,9 @@ async def mongo_check():
 
 
         
-bot.me = bot.get_me()
-Meow.me = Meow.get_me()
 Meow.selected_lang = check_lang()
 LangEngine = Engine()
-LangEngine.load_language()
-Meow.has_a_bot = bool(bot)  
+LangEngine.load_language() 
      
 Meow.start()
 Meow.join_chat("Kaalxsupport")
