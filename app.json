@@ -16,11 +16,11 @@
   "env": {
     "API_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
-      "value": ""
+      "value": "12729671"
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Please do not steal",
-      "value": ""
+      "value": "0476e6b1b88733e3f6d7640ff8d105a4"
     },
     "MONGO_DB": {
       "description": "Create A Database In Mongodb And Get URL. Make Sure To Enter Correct URL!",
@@ -28,7 +28,7 @@
     },
     "LOG_GRP": {
       "description": "A Group ID Where You Want To Log Important Logs.",
-      "value": ""
+      "value": "-1001547159095"
     },
     "HEROKU_API_KEY": {
       "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.",
