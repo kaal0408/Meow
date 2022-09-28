@@ -34,9 +34,9 @@ async def mongo_check():
 
 
         
-bot.me = await bot.get_me()
-Meow.me = await Meow.get_me()
-Meow.selected_lang = await check_lang()
+bot.me = bot.get_me()
+Meow.me = Meow.get_me()
+Meow.selected_lang = check_lang()
 LangEngine = Engine()
 LangEngine.load_language()
 Meow.has_a_bot = bool(bot)  
