@@ -15,7 +15,6 @@ from Main import (
     mongo_client,
 )
 from Main.core.startup_helpers import (
-    load_plugin,
     run_cmd,
 )
 
