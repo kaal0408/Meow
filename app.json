@@ -1,9 +1,9 @@
 {
-    "name": "Alexa",
-    "logo": "https://telegra.ph/file/eeeec4720286552979aee.jpg",
+    "name": "Meow",
+    "logo": "https://telegra.ph/file/3c2932815330a143fa1a8.png",
     "description": "An Advanced Premium Music Bot For Telegram Groups VC.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/kaal-op/Alexa",
+    "repository": "https://github.com/kaal-op/Meow",
     "stack": "container",
     "env": {
         "API_ID": {
@@ -17,11 +17,7 @@
         "BOT_TOKEN": {
             "description": "Put Bot Token Of Your Bot",
             "required": true
-        },
-        "BOT_USERNAME": {
-          "description": "PUT UR USERNAME HERE without @",
-          "required": true
-        },
+        }, 
         "STRING_SESSION": {
             "description": "enter pyrogram string ",
             "required": true
