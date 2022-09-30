@@ -1,0 +1,38 @@
+{
+    "name": "Alexa",
+    "logo": "https://telegra.ph/file/eeeec4720286552979aee.jpg",
+    "description": "An Advanced Premium Music Bot For Telegram Groups VC.",
+    "keywords": ["music", "voice chat", "telegram"],
+    "repository": "https://github.com/kaal-op/Alexa",
+    "stack": "container",
+    "env": {
+        "API_ID": {
+            "description": "Your App ID",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Your App Hash",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Put Bot Token Of Your Bot",
+            "required": true
+        },
+        "BOT_USERNAME": {
+          "description": "PUT UR USERNAME HERE without @",
+          "required": true
+        },
+        "STRING_SESSION": {
+            "description": "enter pyrogram string ",
+            "required": true
+        }
+    },
+    "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+}
