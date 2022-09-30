@@ -2,7 +2,7 @@ import os
 import aiohttp
 from os import getenv
 from dotenv import load_dotenv
-    
+from pyrogram import Client   
 load_dotenv()
 que = {}
 admins = {}
