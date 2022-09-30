@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 StartTime = time.time()
 owner = 'Client.first.name'
 
-@friday_on_cmd(
+@meow_on_cmd(
     ["ping"], prefixes=HNDLR)
 async def pingme(app: Client, message: Message):
     start = datetime.now()
