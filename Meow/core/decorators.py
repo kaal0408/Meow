@@ -17,7 +17,7 @@ from pyrogram.handlers import MessageHandler
 
 from Meow import (
     CMD_LIST,
-    Config,
+    config,
     meow,
 )
 from Meow import config
