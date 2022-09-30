@@ -16,7 +16,7 @@ async def pingme(app: Client, message: Message):
     uptime = get_readable_time((time.time() - StartTime))
     end_time = time.time()
     m_s = (end - start).microseconds / 1000
-    photo = "https://telegra.ph/file/ceb9430fcb275c4f2a0d3.jpg"
+    photo = "https://telegra.ph/file/3c2932815330a143fa1a8.png"
     await message.delete()
     if message.reply_to_message:
         await app.send_photo(
