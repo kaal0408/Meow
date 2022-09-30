@@ -1,4 +1,4 @@
-.
+
 
 import os
 import pytz
@@ -15,14 +15,14 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.handlers import MessageHandler
 
-from Main import (
+from Meow import (
     CMD_LIST,
     Config,
-    Meow,
+    meow,
 )
-from Main.config_var import Config
-from Main.helper_func.basic_helpers import is_admin_or_owner
-from Main.core.helpers import edit_or_reply
+from Meow import config
+from Meow.helper_func.basic_helpers import is_admin_or_owner
+from Meow.core.helpers import edit_or_reply
 from database.sudodb import sudo_list
 
 from bot_utils_files.Localization.engine import Engine as engin_e
