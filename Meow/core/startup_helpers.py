@@ -64,5 +64,5 @@ async def update_it():
         ups_rem.pull(Config.U_BRANCH)
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
-    await run_cmd("pip3 install --no-cache-dir -r requirements.txt")
+    await run_cmd("pip3 install --no-cache-dir -r Installer")
     return
