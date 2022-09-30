@@ -8,7 +8,7 @@ yt-dlp==2021.11.10.1
 motor
 pillow
 psutil
-pyrogram==1.4.12
+pyrogram
 py-tgcalls==0.8.5
 python-dotenv
 requests
