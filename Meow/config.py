@@ -15,7 +15,7 @@ STRING_SESSION = getenv("STRING_SESSION")
 
 HNDLR = os.getenv("HNDLR", ".")
 
-Meow = Client(name="STRING_SESSION", api_id = API_ID, api_hash = API_HASH, session_string=STRING_SESSION, plugins=dict(root="Meow.Modules"))
+meow = Client(name="STRING_SESSION", api_id = API_ID, api_hash = API_HASH, session_string=STRING_SESSION, plugins=dict(root="Meow.Modules"))
 print("Your userbot is started")
 
 hl = HNDLR[0]
