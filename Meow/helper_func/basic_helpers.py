@@ -20,9 +20,9 @@ import mimetypes
 import functools
 import multiprocessing
 from database.sudodb import sudo_list
-from main_startup.config_var import Config
+from Meow import config
 from concurrent.futures import ThreadPoolExecutor
-from Main import Meow
+from Meow import meow
 
 max_workers = multiprocessing.cpu_count() * 1
 exc_ = ThreadPoolExecutor(max_workers=max_workers)
@@ -122,57 +122,12 @@ def get_readable_time(seconds: int) -> int:
 async def get_all_pros() -> list:
     """Get All Users , Sudo + Owners + Other Clients"""
     users = await sudo_list()
-    current_user = Friday.me
+    current_user = meow.me
     users.append(current_user.id)
     return users
 
 
-def paginate_help(page_number, loaded_modules, prefix, is_official=True):
-    """Paginate Buttons"""
-    number_of_rows = 6
-    number_of_cols = 2
-    helpable_modules = []
-    for p in loaded_modules:
-        if not p.startswith("_"):
-            helpable_modules.append(p)
-    helpable_modules = sorted(helpable_modules)
-    modules = [
-        InlineKeyboardButton(
-            text="{} {} {}".format(
-                Config.CUSTOM_HELP_EMOJI,
-                x.replace("_", " ").title(),
-                Config.CUSTOM_HELP_EMOJI,
-            ),
-            callback_data="us_plugin_{}|{}_{}".format(x, page_number, is_official),
-        )
-        for x in helpable_modules
-    ]
-    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
-    if len(modules) % number_of_cols == 1:
-        pairs.append((modules[-1],))
-    max_num_pages = ceil(len(pairs) / number_of_rows)
-    modulo_page = page_number % max_num_pages
-    if len(pairs) > number_of_rows:
-        pairs = pairs[
-            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
-        ] + [
-            (
-                InlineKeyboardButton(
-                    text="⏪ Previous",
-                    callback_data="{}_prev({})_{}".format(
-                        prefix, modulo_page, is_official
-                    ),
-                ),
-                InlineKeyboardButton(text="Back 🔙", callback_data=f"backO_to_help_menu"),
-                InlineKeyboardButton(
-                    text="Next ⏩",
-                    callback_data="{}_next({})_{}".format(
-                        prefix, modulo_page, is_official
-                    ),
-                ),
-            )
-        ]
-    return pairs
+
 
 
 def cb_wrapper(func):
@@ -357,20 +312,6 @@ def get_text(message: Message) -> Union[str, None]:
     else:
         return None
 
-
-async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
-    """ run command in terminal """
-    args = shlex.split(cmd)
-    process = await asyncio.create_subprocess_exec(
-        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-    )
-    stdout, stderr = await process.communicate()
-    return (
-        stdout.decode("utf-8", "replace").strip(),
-        stderr.decode("utf-8", "replace").strip(),
-        process.returncode,
-        process.pid,
-    )
 
 
 async def edit_or_send_as_file(
