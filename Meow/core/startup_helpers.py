@@ -9,7 +9,7 @@ import importlib
 from git import Repo
 from typing import Tuple
 from datetime import datetime
-from Main import Config
+from Meow import config
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 REPO_ = Config.UPSTREAM_REPO
