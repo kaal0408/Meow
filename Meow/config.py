@@ -12,9 +12,13 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "300"))
 STRING_SESSION = getenv("STRING_SESSION")
-BOT_USERNAME = getenv("BOT_USERNAME")
 
+HNDLR = os.getenv("HNDLR", ".")
 
-COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
+Meow = Client(name="STRING_SESSION", api_id = API_ID, api_hash = API_HASH, session_string=STRING_SESSION, plugins=dict(root="Meow.Modules"))
+print("Your userbot is started")
+
+hl = HNDLR[0]
+
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "2068551800").split()))
 aiohttpsession = aiohttp.ClientSession()
