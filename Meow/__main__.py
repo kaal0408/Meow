@@ -3,7 +3,7 @@ from pyrogram import Client as Bot
 from Meow.clientbot import run
 from Meow.config import API_ID, API_HASH, BOT_TOKEN
 from . import meow, hl
-    
+from Meow.core.decorators import meow_on_cmd 
 bot = Bot(
     ":memory:",
     API_ID,
