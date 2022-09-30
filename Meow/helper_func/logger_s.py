@@ -3,8 +3,8 @@
 import os
 import logging
 import traceback
-from Main import Config
-from Main.helper_func.basic_helpers import edit_or_send_as_file
+from Meow import config
+from Meow.helper_func.basic_helpers import edit_or_send_as_file
 
 
 class LogIt:
