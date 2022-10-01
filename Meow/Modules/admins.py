@@ -63,7 +63,8 @@ async def stop(client, m: Message):
 
 
 
-@Client.on_message(commandpro(["!pause", ".pause", "/pause", "pause", "mute"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["pause"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def pause(client, m: Message):
@@ -79,6 +80,7 @@ async def pause(client, m: Message):
             await m.reply(f"**𝑬𝒓𝒓𝒐𝒓.....** \n`{e}`")
     else:
         await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
+
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["resume"], prefixes=HNDLR))
