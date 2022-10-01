@@ -33,7 +33,7 @@
             "value": "5174965229",
             "required": false
        },
-      "MONGO_URI": {
+      "MONGO_DB": {
             "description": "This is for the database account, you can obtain it from mongodb.com.",
             "value": "",
             "required": true
