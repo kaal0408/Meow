@@ -43,11 +43,6 @@
             "value": "",
             "required": false
         },
-      "HNDLR": {
-            "description": "Your Spam Userbot's Command handler",
-            "value": ".",
-            "required": false  
-        }
     },
   "addons": [
     {
