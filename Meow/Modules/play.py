@@ -1,6 +1,5 @@
 import asyncio
 import random
-from ArcaneUserbot.helpers.command import commandpro
 from ArcaneUserbot.helpers.decorators import errors, sudo_users_only
 from pyrogram import Client
 from pyrogram.types import Message
@@ -14,8 +13,8 @@ from pytgcalls.types.input_stream.quality import (
 )
 from youtubesearchpython import VideosSearch
 
-from config import bot, call_py
-from ArcaneUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
+from Meow import bot, call_py, app
+from Meow.VC.queues import QUEUE, add_to_queue, get_queue
 
 # music player
 def ytsearch(query):
@@ -87,7 +86,8 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(commandpro(["!play", ".play", "/play", "P", "Play"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["play"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["play"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def play(client, m: Message):
@@ -179,8 +179,8 @@ async def play(client, m: Message):
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
-
-@Client.on_message(commandpro([".vplay", "V", "!vplay", "/vplay", "Vplay"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["vplay"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["vplay"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def vplay(client, m: Message):
@@ -286,8 +286,8 @@ async def vplay(client, m: Message):
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
-
-@Client.on_message(commandpro([".playfrom", "!playfrom", "/playfrom", "PF", "playfrom"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["playform"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["playform"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def playfrom(client, m: Message):
@@ -308,7 +308,7 @@ async def playfrom(client, m: Message):
         await m.delete()
         hmm = await m.reply(f"**🔎 𝑭𝒆𝒕𝒄𝒉𝒊𝒏𝒈 {limit} 𝒓𝒂𝒏𝒅𝒐𝒎 𝒔𝒐𝒏𝒈𝒔 𝒇𝒓𝒐𝒎 {chat}**")
         try:
-            async for x in bot.search_messages(chat, limit=limit, filter="audio"):
+            async for x in app.search_messages(chat, limit=limit, filter="audio"):
                 location = await x.download()
                 if x.audio.title:
                     songname = x.audio.title[:30] + "..."
@@ -337,8 +337,8 @@ async def playfrom(client, m: Message):
         except Exception as e:
             await hmm.edit(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
 
-
-@Client.on_message(commandpro([".playlist", "/playlist", "!playlist", "PY", "playlist", "/queue"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["playlist"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["playlist"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def playlist(client, m: Message):
