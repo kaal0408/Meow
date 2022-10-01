@@ -7,7 +7,6 @@ python-dotenv
 tgcrypto
 aiofiles
 aiohttp
-pyrogram==1.4.16
 git+https://github.com/kaal0408/yt-dl@master
 python-arq
 python-dotenv
