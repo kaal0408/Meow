@@ -1,10 +1,10 @@
 
 
-from Spam import (DEVS, HNDLR, SUDO_USERS, LOGS_CHANNEL)
+from Meow import (DEVS, HNDLR, SUDO_USERS, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-@Client.on_message(filters.user(DEVS) & filters.command(["join"], prefixes=HNDLR))
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["join"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["join"], prefixes=HNDLR))
 async def join(xspam: Client, e: Message):
@@ -23,7 +23,7 @@ async def join(xspam: Client, e: Message):
              print(a)
              pass
 
-@Client.on_message(filters.user(DEVS) & filters.command(["leave"], prefixes=HNDLR))
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["leave"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["leave"], prefixes=HNDLR))
 async def leave(xspam: Client, e: Message):
