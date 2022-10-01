@@ -4,14 +4,14 @@ import os
 import sys
 import asyncio
 from random import choice
-from Spam import (HNDLR, SUDO_USERS, LOGS_CHANNEL, DEVS)
+from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Spam.data import *
+from Meow.data import *
 
 Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help dm`"
 
-@Client.on_message(filters.user(DEVS) & filters.command(["broadcast", "gcast"], prefixes=HNDLR))
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmraid"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["dmraid"], prefixes=HNDLR))
 async def dmraid(xspam: Client, e: Message):
@@ -61,7 +61,7 @@ async def dmraid(xspam: Client, e: Message):
              print(a)
              pass
  
-@Client.on_message(filters.user(DEVS) & filters.command(["dm"], prefixes=HNDLR))        
+     
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dm"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["dm"], prefixes=HNDLR))
 async def dm(xspam: Client, e: Message):
@@ -104,7 +104,7 @@ async def dm(xspam: Client, e: Message):
              pass
 
 
-
+@Client.on_message(filters.me & filters.command(["dmspam"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmspam"], prefixes=HNDLR))
 async def dmspam(xspam: Client, e: Message):
       Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
