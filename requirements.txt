@@ -1,0 +1,8 @@
+python-decouple
+git+https://github.com/pyrogram/pyrogram@master
+cryptg
+gitpython
+asyncio
+python-dotenv
+tgcrypto
+
