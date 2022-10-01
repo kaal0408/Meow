@@ -9,11 +9,7 @@ from pyrogram import idle
 from . import (app, hl, arq, call_py)
 
 call_py.start()
-print("
------------------
- Music ƛƇƬƖƔЄƊ
-------------------
-")
+print("Your Music is started now ✅")
 
 if app:
     app.start()
