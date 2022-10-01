@@ -8,12 +8,10 @@ import asyncio
 from pyrogram import idle
 from . import (app, hl, arq, call_py)
 
-call_py.run()
-print("Your Music is started now ✅")
 
 if app:
     app.start()
 print("Your Meow userbot Successfully Deployed ✅")
 
-run()
+call_py()
 idle()
