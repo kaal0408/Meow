@@ -1,19 +1,18 @@
 
-
 import os
 import sys
 import asyncio
 import datetime
 import time
-from Spam import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time, DEVS)
+from Meow import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time, DEVS)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram import __version__ as pyro_vr             
                 
 
-pongg = PING_MSG if PING_MSG else "Kaal X"
+pongg = PING_MSG if PING_MSG else "Meow is on fire"
 KAAL_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
-Alivemsg = ALIVE_MSG if ALIVE_MSG else "Kaal Pyrogram spam bot."
+Alivemsg = ALIVE_MSG if ALIVE_MSG else "Meow is online now."
 
 
 manjeet = f"⁂ {Alivemsg} ⁂\n\n"
@@ -22,9 +21,9 @@ manjeet += f"➠ **Python version** : `3.10.4`\n"
 manjeet += f"➠ **Pyrogram version** : `{pyro_vr}`\n"
 manjeet += f"➠ **Spam version**  : `{__version__}`\n"
 manjeet += f"➠ **Channel** : [support channel.](https://t.me/Murat_30_God)\n"
-manjeet += f"➠ **Group** : [support Group.](https://t.me/kaalxsupport)\n"
+manjeet += f"➠ **Group** : [Owner](https://t.me/Murat_30)\n"
 manjeet += f"━───────╮•╭───────━\n\n"
-manjeet += f"➠ **Source Code:** [•Repo•](https://github.com/KAAL-OP/Spam)"
+manjeet += f"➠ **Source Code:** [•Repo•](https://github.com/kaal0408/Meow)"
 
 
 async def get_time(seconds: int) -> str:
@@ -49,7 +48,7 @@ async def get_time(seconds: int) -> str:
     return up_time
 
 
-@Client.on_message(filters.user(DEVS) & filters.command(["ping"], prefixes=HNDLR))
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["ping"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["ping"], prefixes=HNDLR))
 async def ping(_, e: Message):       
@@ -62,7 +61,7 @@ async def ping(_, e: Message):
 
 
 
-@Client.on_message(filters.user(DEVS) & filters.command(["alive"], prefixes=HNDLR))
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["alive"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["alive"], prefixes=HNDLR))
 async def alive(xspam: Client, e: Message):
@@ -73,7 +72,7 @@ async def alive(xspam: Client, e: Message):
 
 
 
-@Client.on_message(filters.user(DEVS) & filters.command(["restart", "reboot"], prefixes=HNDLR))
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["restart", "reboot"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["restart", "reboot"], prefixes=HNDLR))
 async def reboot(xspam: Client, e: Message):
@@ -83,7 +82,7 @@ async def reboot(xspam: Client, e: Message):
             xspam.disconnect()
         except Exception as e:
             pass
-        args = [sys.executable, "-m", "Spam"]
+        args = [sys.executable, "-m", "Meow"]
         os.execl(sys.executable, *args)
         quit()
 
