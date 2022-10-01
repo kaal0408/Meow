@@ -1,6 +1,6 @@
 
 
-from Meow import (DEVS, HNDLR, SUDO_USERS, LOGS_CHANNEL)
+from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
