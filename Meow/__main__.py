@@ -8,7 +8,7 @@ import asyncio
 from pyrogram import idle
 from . import (app, hl, arq, call_py)
 
-call_py.start()
+call_py.run()
 print("Your Music is started now ✅")
 
 if app:
