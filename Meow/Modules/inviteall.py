@@ -1,10 +1,11 @@
-from pyrogram import Client, filters
 
+from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from pyrogram import Client, filters
 
 
 @app.on_message(filters.regex("!add") & filters.me) # example : !add @Y88F8
 async def copy_members(client, message):
-# by : @ZDDDU 
+# by : @Murat_30
       chat_id = message.text.split(None, 2)[1]
      #by : @Murat_30 
       m = await message.reply("~ Processing...")
