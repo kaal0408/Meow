@@ -7,7 +7,9 @@ from Meow.VC.handlers import skip_current_song, skip_item
 from Meow.VC.queues import QUEUE, clear_queue
 from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
-@Client.on_message(commandpro(["!skip", ".skip", "/skip", "S", "Skip", "Next"]))
+
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["skip"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def skip(client, m: Message):
@@ -42,7 +44,8 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(commandpro(["!end", ".end", "/end", "!stop", ".stop", "/stop", "E", "End", "Stop"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["end"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["end"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def stop(client, m: Message):
@@ -57,6 +60,7 @@ async def stop(client, m: Message):
             await m.reply(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
     else:
         await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
+
 
 
 @Client.on_message(commandpro(["!pause", ".pause", "/pause", "pause", "mute"]))
@@ -76,8 +80,8 @@ async def pause(client, m: Message):
     else:
         await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
 
-
-@Client.on_message(commandpro(["!resume", ".resume", "/resume", "resume", "unmute"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["resume"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def resume(client, m: Message):
