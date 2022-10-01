@@ -8,8 +8,8 @@ from pytgcalls.types.input_stream.quality import (
 )
 from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 
-from config import bot, call_py
-from ArcaneUserbot.helpers.queues import QUEUE, clear_queue, get_queue, pop_an_item
+from Meow import app, call_py
+from Meow.VC.queues import QUEUE, clear_queue, get_queue, pop_an_item
 
 
 async def skip_current_song(chat_id):
@@ -70,11 +70,11 @@ async def on_end_handler(_, update: Update):
         print(chat_id)
         op = await skip_current_song(chat_id)
         if op == 0:
-            await bot.send_message(
+            await app.send_message(
                 chat_id, "__Empty Queue, Leaving Voice Chat__"
             )
         else:
-            await bot.send_message(
+            await app.send_message(
                 chat_id,
                 f"**🎵 ղօա ƤԼƛƳƖƝƓP** \n[{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
