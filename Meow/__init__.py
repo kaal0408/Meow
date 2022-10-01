@@ -11,7 +11,7 @@ import time
 
 from dotenv import load_dotenv
 from pyrogram import Client, filters
-
+import aiohttp
 from Python_ARQ import ARQ
 from dotenv import load_dotenv
 from pytgcalls import PyTgCalls
