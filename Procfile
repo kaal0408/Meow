@@ -1,1 +1,1 @@
-worker: python3 -m Spam
+worker: python3 -m Meow
