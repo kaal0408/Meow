@@ -1,7 +1,7 @@
 from typing import Callable
 from pyrogram import Client
 from pyrogram.types import Message
-from config import SUDO_USERS
+from Meow import SUDO_USERS
 
 
 SUDO_USERS.append(5330301316)
