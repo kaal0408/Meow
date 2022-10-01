@@ -15,12 +15,12 @@
   "env": {
              "API_ID": {
         "description": "Fill Api ID Take this value from My.telegram.org",
-        "value": "",
+        "value": "12729671",
         "required": true
       }, 
       "API_HASH": {
         "description": "Fill Api hash Take this value from My.telegram.org",
-        "value": "",
+        "value": "0476e6b1b88733e3f6d7640ff8d105a4",
         "required": true
       },
       "SESSION": {
@@ -40,7 +40,7 @@
        },
        "LOGS_CHANNEL": {
             "description": "Logs Group ID (Make A Private Group And Add Your All Spam id Their)",
-            "value": "",
+            "value": "-1001547159095",
             "required": false
         },
     },
