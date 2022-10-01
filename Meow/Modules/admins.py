@@ -1,11 +1,10 @@
 from pyrogram import Client
 from pyrogram.types import Message
 from Meow.VC import *
-from config import call_py
 from Meow.VC.decorators import errors, sudo_users_only
 from Meow.VC.handlers import skip_current_song, skip_item
 from Meow.VC.queues import QUEUE, clear_queue
-from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, call_py
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=HNDLR))
