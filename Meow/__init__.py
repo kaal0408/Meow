@@ -12,6 +12,10 @@ import time
 from dotenv import load_dotenv
 from pyrogram import Client, filters
 
+from Python_ARQ import ARQ
+from dotenv import load_dotenv
+from pytgcalls import PyTgCalls
+
 
 if os.path.exists(".env"):
     load_dotenv(".env")
@@ -35,6 +39,8 @@ SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
 
+aiohttpsession = aiohttp.ClientSession()
+arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 
 HELP = {}
 CMD_HELP = {}
@@ -44,7 +50,7 @@ CMD_HELP = {}
 
 app = Client(name="SESSION", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Meow.Modules"))
 print("Client 1 Found")
-
+call_py = PyTgCalls(app)
 
 hl = HNDLR[0]
 start_time = time.time()
