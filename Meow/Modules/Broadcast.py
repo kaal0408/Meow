@@ -7,7 +7,7 @@ import asyncio
 from pyrogram.types import Message
 
 
-@Client.on_message(filters.user(DEVS) & filters.command(["broadcast", "gcast"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["broadcast", "gcast"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["broadcast", "gcast"], prefixes=HNDLR))
 async def broadcast(xspam: Client, e: Message):
     ok = e.from_user.id
