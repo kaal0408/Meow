@@ -3,10 +3,17 @@
 # Don't Kang 
 
 
-
+from pytgcalls import idle
 import asyncio
 from pyrogram import idle
-from . import (app, hl)
+from . import (app, hl, arq, call_py)
+
+call_py.start()
+print("
+-----------------
+ Music ƛƇƬƖƔЄƊ
+------------------
+")
 
 if app:
     app.start()
