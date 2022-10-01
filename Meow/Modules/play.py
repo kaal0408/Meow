@@ -12,6 +12,7 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from youtubesearchpython import VideosSearch
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
 from Meow import bot, call_py, app
 from Meow.VC.queues import QUEUE, add_to_queue, get_queue
