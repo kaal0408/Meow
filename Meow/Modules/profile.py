@@ -4,7 +4,7 @@
 import os
 import sys
 from random import choice
-from Meow import (DEVS, HNDLR, SUDO_USERS, hl, LOGS_CHANNEL)
+from Meow import (HNDLR, SUDO_USERS, hl, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from Meow.data import *
