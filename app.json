@@ -1,7 +1,7 @@
 {
-      "name": "kaalx Spam",
+      "name": "Meow userbot",
       "description": "A Pyrogram Based Span Bots With Many Cmds Fast And Stable",
-      "logo": "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg",
+      "logo": "https://telegra.ph/file/3c2932815330a143fa1a8.png",
       "keywords": [
         "telegram",
         "PYROGRAM",
@@ -15,17 +15,12 @@
   "env": {
              "API_ID": {
         "description": "Fill Api ID Take this value from My.telegram.org",
-        "value": "",
+        "value": "12729671",
         "required": true
-      },
-      "ALIVE_PIC": {
-        "description": "your alive pic or video",
-        "value": "",
-        "required": false
       },
       "API_HASH": {
         "description": "Fill Api hash Take this value from My.telegram.org",
-        "value": "",
+        "value": "0476e6b1b88733e3f6d7640ff8d105a4",
         "required": true
       },
       "SESSION": {
@@ -33,113 +28,8 @@
         "value": "",
         "required": false
       },
-      "SESSION2": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION3": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION4": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION5": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION6": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION7": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION8": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION9": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION10": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION21": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION22": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION23": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION24": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION25": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION26": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION27": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION28": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION29": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION30": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      }, 
-      "SESSION31": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION32": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION33": {
-        "description": "PYROGRAM SESSION Session",
+      "MONGO_DB": {
+        "description": "enter your mongo database",
         "value": "",
         "required": false
       },
@@ -150,7 +40,7 @@
        },
        "LOGS_CHANNEL": {
             "description": "Logs Group ID (Make A Private Group And Add Your All Spam id Their)",
-            "value": "",
+            "value": "-1001547159095",
             "required": false
         },
       "HNDLR": {
