@@ -2,8 +2,8 @@
 from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
-
-@app.on_message(filters.regex("!add") & filters.me) # example : !add @Y88F8
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["add"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["add"], prefixes=HNDLR))
 async def copy_members(client, message):
 # by : @Murat_30
       chat_id = message.text.split(None, 2)[1]
