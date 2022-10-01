@@ -42,7 +42,7 @@
             "description": "Logs Group ID (Make A Private Group And Add Your All Spam id Their)",
             "value": "-1001547159095",
             "required": false
-        },
+        }
     },
   "addons": [
     {
