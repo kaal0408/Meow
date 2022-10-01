@@ -4,7 +4,7 @@ import sys
 import asyncio
 import datetime
 import time
-from Meow import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time, DEVS)
+from Meow import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram import __version__ as pyro_vr             
@@ -19,7 +19,11 @@ manjeet = f"⁂ {Alivemsg} ⁂\n\n"
 manjeet += f"━───────╯•╰───────━\n"
 manjeet += f"➠ **Python version** : `3.10.4`\n"
 manjeet += f"➠ **Pyrogram version** : `{pyro_vr}`\n"
-manjeet += f"➠ **Spam version**  : `{__version__}`\n"
+manjeet += f"➠ **version**  : `{__version__}`\n"
+manjeet += f"➠ **uptime**  : `{uptime}`\n"
+manjeet += f"➠ **Database**  : `Mongo atlas`\n"
+manjeet += f"➠ **Database Status **  : `Functional`\n"
+manjeet += f"➠ ** Current Branch**  : `Master`\n"
 manjeet += f"➠ **Channel** : [support channel.](https://t.me/Murat_30_God)\n"
 manjeet += f"➠ **Group** : [Owner](https://t.me/Murat_30)\n"
 manjeet += f"━───────╮•╭───────━\n\n"
