@@ -1,6 +1,6 @@
 import asyncio
 import random
-from ArcaneUserbot.helpers.decorators import errors, sudo_users_only
+from Meow.VC.decorators import errors, sudo_users_only
 from pyrogram import Client
 from pyrogram.types import Message
 from pytgcalls import StreamType
