@@ -11,7 +11,7 @@ from pyrogram import __version__ as pyro_vr
                 
 
 pongg = PING_MSG if PING_MSG else "Meow is on fire"
-KAAL_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
+KAAL_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/3c2932815330a143fa1a8.png"
 Alivemsg = ALIVE_MSG if ALIVE_MSG else "Meow is online now."
 
 
