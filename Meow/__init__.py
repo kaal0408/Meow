@@ -2,8 +2,6 @@
 # (c) 2022 - 2023 KAAL
 # Don't Kang Bitch -! 
 
-
-
 import asyncio
 import os
 import sys
@@ -16,6 +14,7 @@ from Python_ARQ import ARQ
 from dotenv import load_dotenv
 from pytgcalls import PyTgCalls
 
+ARQ_API_KEY = "HMPXNS-BDPCCB-UJKRPU-OQADHG-ARQ"
 
 if os.path.exists(".env"):
     load_dotenv(".env")
