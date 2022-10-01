@@ -26,7 +26,7 @@ ALIVE_MSG = os.getenv("ALIVE_MSG", "")
 PING_MSG = os.getenv("PING_MSG", "")
 SESSION = os.getenv("SESSION", None)
 LOGS_CHANNEL = os.getenv("LOGS_CHANNEL", None)
-
+MONGO_DB = os.environ.get("MONGO_DB", "")
     
 HNDLR = os.getenv("HNDLR", ".")
 sudo = os.getenv("SUDO_USERS")
