@@ -13,14 +13,14 @@ from pyrogram import __version__ as pyro_vr
 pongg = PING_MSG if PING_MSG else "Meow is on fire"
 KAAL_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
 Alivemsg = ALIVE_MSG if ALIVE_MSG else "Meow is online now."
-#uptime = await get_time((time.time() - start_time))
+
 
 manjeet = f"⁂ {Alivemsg} ⁂\n\n"
 manjeet += f"━───────╯•╰───────━\n"
 manjeet += f"➠ **Python version** : `3.10.4`\n"
 manjeet += f"➠ **Pyrogram version** : `{pyro_vr}`\n"
 manjeet += f"➠ **version**  : `{__version__}`\n"
-manjeet += f"➠ **uptime**  : `{uptime}`\n"
+manjeet += f"➠ **uptime**  : `{get_time((time.time() - start_time))}`\n"
 manjeet += f"➠ **Database**  : `Mongo atlas`\n"
 manjeet += f"➠ **Database Status **  : `Functional`\n"
 manjeet += f"➠ ** Current Branch**  : `Master`\n"
