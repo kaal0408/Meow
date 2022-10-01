@@ -4,16 +4,15 @@
 import os
 import sys
 from random import choice
-from Spam import (DEVS, HNDLR, SUDO_USERS, hl, LOGS_CHANNEL)
+from Meow import (DEVS, HNDLR, SUDO_USERS, hl, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Spam.data import *
+from Meow.data import *
 
 Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help owner`"
 Media = "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["setpic"], prefixes=HNDLR))
-@Client.on_message(filters.user(DEVS) & filters.command(["setpic"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setpic"], prefixes=HNDLR))
 async def setpic(xspam: Client, e: Message):
      replied = e.reply_to_message
@@ -35,7 +34,6 @@ async def setpic(xspam: Client, e: Message):
 etc_bio = "kaal x user ,join @kaalxsupport"
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["setname"], prefixes=HNDLR))
-@Client.on_message(filters.user(DEVS) & filters.command(["setname"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setname"], prefixes=HNDLR))
 async def setname(xspam: Client, e: Message): 
       Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -57,7 +55,6 @@ async def setname(xspam: Client, e: Message):
              pass
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["setbio"], prefixes=HNDLR))
-@Client.on_message(filters.user(DEVS) & filters.command(["setbio"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setbio"], prefixes=HNDLR))
 async def setbio(xspam: Client, e: Message):
       Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
