@@ -70,11 +70,13 @@ async def on_end_handler(_, update: Update):
         print(chat_id)
         op = await skip_current_song(chat_id)
         if op == 0:
-            await app.send_message(
-                chat_id, "__Empty Queue, Leaving Voice Chat__"
+            await message.reply_photo(
+                photo="https://telegra.ph/file/eeeec4720286552979aee.jpg", 
+                caption=" chat_id, "__Empty Queue, Leaving Voice Chat__"
             )
         else:
-            await app.send_message(
+            await message.reply_photo(
+                photo="https://telegra.ph/file/eeeec4720286552979aee.jpg",
                 chat_id,
                 f"**🎵 ղօա ƤԼƛƳƖƝƓP** \n[{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
