@@ -6,10 +6,11 @@
 import asyncio
 from Meow.client import app
 from pytgcalls import idle
+from . import (app, hl)
 
+if app:
+    app.start()
 
-app.start()
-idle()
 print("Meow Deployed Successfully✅")
 
 print('Deployed')
