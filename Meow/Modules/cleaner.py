@@ -1,5 +1,4 @@
 import os
-from pyrogram import Client
 from pyrogram.types import Message
 from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
