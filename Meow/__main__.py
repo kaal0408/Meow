@@ -4,12 +4,11 @@
 # Contribution by @Alone_loverboy
 
 import asyncio
-from . import (app, hl)
+from Meow.client import app
 
-if app:
+if __name__ == "__main__":
     app.start()
-
-print("Meow Deployed Successfully✅")
+    print("Meow Deployed Successfully✅")
 
 print('Deployed')
  
