@@ -7,9 +7,18 @@ from pyrogram import Client
 from pytgcalls import PyTgCalls 
 from . import (SESSION, API_ID, API_HASH)
 
+API_ID = os.environ.get("API_ID", "")
+API_HASH = os.environ.get("API_HASH", "")
+SESSION = os.environ.get("SESSION", "")
 
-app = Client(name="Meow", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Meow.Modules"))
-print("Client  Found")
-
-
+app = Client(
+    name="[Meow😸]",
+    session_string=SESSION,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    in_memory=True,
+    plugins={'root': 'Meow.Modules'}
+)
 callMe = PyTgCalls(app)
+
+print("Connected to Client.")
