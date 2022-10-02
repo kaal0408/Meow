@@ -38,8 +38,6 @@ SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
 
-aiohttpsession = aiohttp.ClientSession()
-arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 
 HELP = {}
 CMD_HELP = {}
