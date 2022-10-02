@@ -14,7 +14,7 @@ from pytgcalls.types.input_stream.quality import (
 from youtubesearchpython import VideosSearch
 from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
-from Meow import app, call_py
+from Meow import app, callMe
 from Meow.VC.queues import QUEUE, add_to_queue, get_queue
 
 # music player
@@ -87,8 +87,8 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["play"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["play"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["play"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["play"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def play(client, m: Message):
@@ -118,7 +118,7 @@ async def play(client, m: Message):
 """,
                 )
             else:
-                await call_py.join_group_call(
+                await callMe.join_group_call(
                     chat_id,
                     AudioPiped(
                         dl,
@@ -162,7 +162,7 @@ async def play(client, m: Message):
                         )
                     else:
                         try:
-                            await call_py.join_group_call(
+                            await callMe.join_group_call(
                                 chat_id,
                                 AudioPiped(
                                     ytlink,
@@ -180,8 +180,8 @@ async def play(client, m: Message):
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["vplay"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["vplay"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["vplay"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["vplay"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def vplay(client, m: Message):
@@ -227,7 +227,7 @@ async def vplay(client, m: Message):
                     hmmm = MediumQualityVideo()
                 elif Q == 360:
                     hmmm = LowQualityVideo()
-                await call_py.join_group_call(
+                await callMe.join_group_call(
                     chat_id,
                     AudioVideoPiped(dl, HighQualityAudio(), hmmm),
                     stream_type=StreamType().pulse_stream,
@@ -271,7 +271,7 @@ async def vplay(client, m: Message):
                         )
                     else:
                         try:
-                            await call_py.join_group_call(
+                            await callMe.join_group_call(
                                 chat_id,
                                 AudioVideoPiped(ytlink, HighQualityAudio(), hmmm),
                                 stream_type=StreamType().pulse_stream,
@@ -319,7 +319,7 @@ async def playfrom(client, m: Message):
                 if chat_id in QUEUE:
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                 else:
-                    await call_py.join_group_call(
+                    await callMe.join_group_call(
                         chat_id,
                         AudioPiped(location),
                         stream_type=StreamType().pulse_stream,
@@ -338,8 +338,8 @@ async def playfrom(client, m: Message):
         except Exception as e:
             await hmm.edit(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["playlist"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["playlist"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["playlist"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["playlist"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def playlist(client, m: Message):
