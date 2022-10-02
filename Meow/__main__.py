@@ -9,9 +9,20 @@ from pyrogram import idle
 from . import (app, hl, arq, call_py)
 
 
+async def main():
+    await call_py.start()
+    print(
+        """
+    ------------------
+   | ƲՏЄƦƁƠƬ ƛƇƬƖƔЄƊ! |
+    ------------------
+"""
+    )
+    await idle()
+    await arq.close()
 
-call_py.start()
-print("Your Meow userbot Successfully Deployed ✅")
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
 
 
-idle()
