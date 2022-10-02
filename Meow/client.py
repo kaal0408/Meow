@@ -18,6 +18,6 @@ app = Client(
     in_memory=True,
     plugins={'root': 'Meow.Modules'}
 )
-callMe = PyTgCalls(app)
+
 
 print("Connected to Client.")
