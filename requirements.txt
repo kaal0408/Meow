@@ -1,19 +1,8 @@
 python-decouple
-pyrogram==1.4.16
+git+https://github.com/pyrogram/pyrogram@master
 cryptg
 gitpython
 asyncio
 python-dotenv
 tgcrypto
-aiofiles
-aiohttp
-git+https://github.com/kaal0408/yt-dl@master
-python-arq
-python-dotenv
-py-tgcalls
-requests
-wget
-youtube-search-python==1.4.6
-
-
 
