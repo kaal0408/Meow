@@ -72,12 +72,12 @@ async def on_end_handler(_, update: Update):
         if op == 0:
             await message.reply_photo(
                 photo="https://telegra.ph/file/eeeec4720286552979aee.jpg", 
-                caption=__Empty Queue, Leaving Voice Chat__,
+                caption="__Empty Queue, Leaving Voice Chat__",
             )
         else:
             await message.reply_photo(
                 photo="https://telegra.ph/file/eeeec4720286552979aee.jpg",
-                chat_id,
+               # chat_id, what the fuck chat_id doing 🙄here
                 f"**🎵 ղօա ƤԼƛƳƖƝƓP** \n[{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
             )
