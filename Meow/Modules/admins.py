@@ -4,11 +4,11 @@ from Meow.VC import *
 from Meow.VC.decorators import errors, sudo_users_only
 from Meow.VC.handlers import skip_current_song, skip_item
 from Meow.VC.queues import QUEUE, clear_queue
-from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, call_py
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, callMe, app
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["skip"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["skip"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def skip(client, m: Message):
@@ -43,8 +43,8 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["end"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["end"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["end"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["end"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def stop(client, m: Message):
@@ -52,7 +52,7 @@ async def stop(client, m: Message):
     chat_id = m.chat.id
     if chat_id in QUEUE:
         try:
-            await call_py.leave_group_call(chat_id)
+            await callMe.leave_group_call(chat_id)
             clear_queue(chat_id)
             await m.reply("**✅ 𝑬𝒏𝒅𝒆𝒅 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌**")
         except Exception as e:
@@ -62,8 +62,8 @@ async def stop(client, m: Message):
 
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["pause"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["pause"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def pause(client, m: Message):
@@ -71,7 +71,7 @@ async def pause(client, m: Message):
     chat_id = m.chat.id
     if chat_id in QUEUE:
         try:
-            await call_py.pause_stream(chat_id)
+            await callMe.pause_stream(chat_id)
             await m.reply(
                 f"**⏸ 𝑷𝒍𝒂𝒚𝒃𝒂𝒄𝒌 𝒑𝒂𝒖𝒔𝒆𝒅**\n\n𝑻𝒐 𝒓𝒆𝒔𝒖𝒎𝒆 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌, 𝒖𝒔𝒆 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 » `!resume`"
             )
@@ -81,8 +81,8 @@ async def pause(client, m: Message):
         await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["resume"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["resume"], prefixes=HNDLR))
 @errors
 @sudo_users_only
 async def resume(client, m: Message):
@@ -90,7 +90,7 @@ async def resume(client, m: Message):
     chat_id = m.chat.id
     if chat_id in QUEUE:
         try:
-            await call_py.resume_stream(chat_id)
+            await callMe.resume_stream(chat_id)
             await m.reply(
                 f"**▶️ 𝑷𝒍𝒂𝒚𝒃𝒂𝒄𝒌 𝒓𝒆𝒔𝒖𝒎𝒆𝒅**\n\n𝑻𝒐 𝒑𝒂𝒖𝒔𝒆 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌, 𝒖𝒔𝒆 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 » `!pause`"
             )
