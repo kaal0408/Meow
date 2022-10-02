@@ -9,8 +9,8 @@ from pyrogram import idle
 from . import (app, hl, arq, call_py)
 
 
-if app:
-    app.start()
+
+call_py.start()
 print("Your Meow userbot Successfully Deployed ✅")
 
 
