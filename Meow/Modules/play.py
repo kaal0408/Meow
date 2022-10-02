@@ -1,7 +1,7 @@
 import asyncio
 import random
 from Meow.VC.decorators import errors, sudo_users_only
-from pyrogram import Client
+from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
