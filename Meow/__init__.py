@@ -44,7 +44,7 @@ CMD_HELP = {}
 
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
 #----------------------------------------------
-app = Client(name="SESSION", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Spam.module"))
+app = Client(name="SESSION", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Meow.Modules"))
 print("Client 1 Found")
 
 hl = HNDLR[0]
