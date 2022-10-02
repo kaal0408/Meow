@@ -78,6 +78,6 @@ async def on_end_handler(_, update: Update):
             await message.reply_photo(
                 photo="https://telegra.ph/file/eeeec4720286552979aee.jpg",
                # chat_id, what the fuck chat_id doing 🙄here
-                f"**🎵 ղօա ƤԼƛƳƖƝƓP** \n[{op[0]}]({op[1]}) | `{op[2]}`",
+                caption= f"**🎵 ղօա ƤԼƛƳƖƝƓP** \n[{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
             )
