@@ -2,7 +2,7 @@
 # (c) @Alone_loverboy || (https://DevAdarsh.me/)
 
 #Soo lets start
-
+import os
 from pyrogram import Client 
 from pytgcalls import PyTgCalls 
 from . import (SESSION, API_ID, API_HASH)
