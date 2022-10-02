@@ -4,9 +4,6 @@
 # Contribution by @Alone_loverboy
 
 import asyncio
-import asyncio
-from Meow.client import app
-from pytgcalls import idle
 from . import (app, hl)
 
 if app:
