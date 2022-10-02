@@ -3,8 +3,8 @@ from pyrogram.types import Message
 from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["clean"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["clean"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["clean"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["clean"], prefixes=HNDLR))
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
     ls_dir = os.listdir(pth)
