@@ -5,7 +5,7 @@
 
 from pyrogram import Client 
 from pytgcalls import PyTgCalls 
-
+from . import (SESSION, API_ID, API_HASH)
 
 app = Client(
     name = "[Meow😸]",
