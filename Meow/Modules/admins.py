@@ -1,4 +1,4 @@
-from pyrogram import Client
+from pyrogram import Client, filters
 from pyrogram.types import Message
 from Meow.VC import *
 from Meow.VC.decorators import errors, sudo_users_only
