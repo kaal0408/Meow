@@ -8,7 +8,7 @@ from pytgcalls.types.input_stream.quality import (
 )
 from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 
-from Meow import app, call_py
+from Meow import app, callMe
 from Meow.VC.queues import QUEUE, clear_queue, get_queue, pop_an_item
 
 
@@ -16,7 +16,7 @@ async def skip_current_song(chat_id):
     if chat_id in QUEUE:
         chat_queue = get_queue(chat_id)
         if len(chat_queue) == 1:
-            await call_py.leave_group_call(chat_id)
+            await callMe.leave_group_call(chat_id)
             clear_queue(chat_id)
             return 1
         else:
@@ -39,7 +39,7 @@ async def skip_current_song(chat_id):
                     hm = MediumQualityVideo()
                 elif Q == 240:
                     hm = LowQualityVideo()
-                await call_py.change_stream(
+                await callMe.change_stream(
                     chat_id, AudioVideoPiped(url, HighQualityAudio(), hm)
                 )
             pop_an_item(chat_id)
@@ -63,7 +63,7 @@ async def skip_item(chat_id, h):
         return 0
 
 
-@call_py.on_stream_end()
+@callMe.on_stream_end()
 async def on_end_handler(_, update: Update):
     if isinstance(update, StreamAudioEnded) or isinstance(update, StreamVideoEnded):
         chat_id = update.chat_id
