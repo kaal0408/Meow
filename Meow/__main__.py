@@ -4,11 +4,14 @@
 # Contribution by @Alone_loverboy
 
 import asyncio
+import asyncio
 from Meow.client import app
+from pytgcalls import idle
+from . import (app, hl)
 
-if __name__ == "__main__":
+if app:
     app.start()
+    idle()
     print("Meow Deployed Successfully✅")
 
 print('Deployed')
- 
