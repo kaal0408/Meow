@@ -47,9 +47,6 @@ CMD_HELP = {}
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
 #----------------------------------------------
 
-app = Client(name="SESSION", api_id = API_ID, api_hash = API_HASH, session_string=SESSION, plugins=dict(root="Meow.Modules"))
-print("Client 1 Found")
-call_py = PyTgCalls(app)
 
 hl = HNDLR[0]
 start_time = time.time()
