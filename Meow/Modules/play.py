@@ -14,7 +14,7 @@ from pytgcalls.types.input_stream.quality import (
 from youtubesearchpython import VideosSearch
 from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
-from Meow import app as bot, call_py
+from Meow import app, call_py
 from Meow.VC.queues import QUEUE, add_to_queue, get_queue
 
 # music player
