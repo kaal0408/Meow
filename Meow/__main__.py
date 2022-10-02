@@ -13,5 +13,5 @@ if app:
     app.start()
 print("Your Meow userbot Successfully Deployed ✅")
 
-call_py()
+
 idle()
