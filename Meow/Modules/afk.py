@@ -8,11 +8,13 @@ from pyrogram import enums
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from datetime import datetime
 import asyncio
-from startup.config import PVT_GRP
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from pyrogram import Client, filters
+
 from . import *
 from misc import *
 
-from startup.dB.afkdb import (
+from database.afkdb import (
     no_afk,
     go_afk,
     check_afk
@@ -35,12 +37,12 @@ async def set_afk(_, message: Message):
         go_afk(afk_start, msge)
     else:
         msg = f"**AFK**Started✅\n\nR E A S O N: **I am very Busy Right Now🥵🥵\nI can't talk to your now!!😅\n\nPlease Wait until i will come back😁**."
-        await log.log_msg(astro, f"#AfkLogger Afk Is Active")
+        await log.log_msg(app, f"#AfkLogger Afk Is Active")
         go_afk(afk_start) 
     await pablo.edit(msg)
         
 @dynamic(filters.mentioned & ~filters.me & ~filters.bot & filters.incoming)
-async def afk_er(astro, message: Message):
+async def afk_er(app, message: Message):
     lol = check_afk()
     if not lol:
         message.continue_propagation()
@@ -57,7 +59,7 @@ async def afk_er(astro, message: Message):
     LL = await message.reply(message_to_reply)
     if chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
       try: 
-        await assistant.send_message(PVT_GRP, f"#TAGGED\n\nHey!\nMy Honorable Master Someone has tagged you in group while you were in AFK!\n\n~CHAT👥: - {chat.title}\n~Message📜: - {message.text}\n", reply_markup=InlineKeyboardMarkup([
+        await app.send_message(PVT_GRP, f"#TAGGED\n\nHey!\nMy Honorable Master Someone has tagged you in group while you were in AFK!\n\n~CHAT👥: - {chat.title}\n~Message📜: - {message.text}\n", reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
             text="📨Check Message", url=f"https://t.me/c/{str(chat.id)[4:]}/{message.id}")
