@@ -72,7 +72,7 @@ async def afk_er(app, message: Message):
         await app.send_message(LOGS_CHANNEL, "Master\nYou have not Added Your assistant bot here😅\nWithout Assistant you can't get Tagged Notification\n\nPlease add Assistant Here!")
     message.continue_propagation()
         
-@app(filters.outgoing & filters.me)
+@manjeet(filters.outgoing & filters.me)
 async def no_afke(app, message: Message):
     name = message.from_user.mention
     lol = check_afk()
