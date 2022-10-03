@@ -22,7 +22,8 @@ from database.afkdb import (
 
 
 
-@astro.on_message(filters.command("afk", HNDLR) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["afk"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["afk"], prefixes=HNDLR))
 async def set_afk(_, message: Message):
     name = message.from_user.mention
     pablo = await edit_or_reply(message, "__Processing...__")
@@ -33,15 +34,16 @@ async def set_afk(_, message: Message):
     log = Logme(message)
     if msge:
         msg = f"**{name}** \n__Going Afk Because Of😴💤__ `{msge}`"
-        await log.log_msg(astro, f"#AfkLogger\n\nMaster your AFK is Activated✅\nR E A S O N: `{msge}`",)
+        await log.log_msg(app, f"#AfkLogger\n\nMaster your AFK is Activated✅\nR E A S O N: `{msge}`",)
         go_afk(afk_start, msge)
     else:
         msg = f"**AFK**Started✅\n\nR E A S O N: **I am very Busy Right Now🥵🥵\nI can't talk to your now!!😅\n\nPlease Wait until i will come back😁**."
         await log.log_msg(app, f"#AfkLogger Afk Is Active")
         go_afk(afk_start) 
     await pablo.edit(msg)
-        
-@dynamic(filters.mentioned & ~filters.me & ~filters.bot & filters.incoming)
+
+      
+@app(filters.mentioned & ~filters.me & ~filters.bot & filters.incoming)
 async def afk_er(app, message: Message):
     lol = check_afk()
     if not lol:
@@ -59,7 +61,7 @@ async def afk_er(app, message: Message):
     LL = await message.reply(message_to_reply)
     if chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
       try: 
-        await app.send_message(PVT_GRP, f"#TAGGED\n\nHey!\nMy Honorable Master Someone has tagged you in group while you were in AFK!\n\n~CHAT👥: - {chat.title}\n~Message📜: - {message.text}\n", reply_markup=InlineKeyboardMarkup([
+        await app.send_message(LOGS_CHANNEL, f"#TAGGED\n\nHey!\nMy Honorable Master Someone has tagged you in group while you were in AFK!\n\n~CHAT👥: - {chat.title}\n~Message📜: - {message.text}\n", reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
             text="📨Check Message", url=f"https://t.me/c/{str(chat.id)[4:]}/{message.id}")
@@ -67,11 +69,11 @@ async def afk_er(app, message: Message):
     ]),
    )
       except ValueError:
-        await astro.send_message(PVT_GRP, "Master\nYou have not Added Your assistant bot here😅\nWithout Assistant you can't get Tagged Notification\n\nPlease add Assistant Here!")
+        await app.send_message(LOGS_CHANNEL, "Master\nYou have not Added Your assistant bot here😅\nWithout Assistant you can't get Tagged Notification\n\nPlease add Assistant Here!")
     message.continue_propagation()
         
-@dynamic(filters.outgoing & filters.me)
-async def no_afke(astro, message: Message):
+@app(filters.outgoing & filters.me)
+async def no_afke(app, message: Message):
     name = message.from_user.mention
     lol = check_afk()
     if not lol:
@@ -85,5 +87,5 @@ async def no_afke(astro, message: Message):
     await kk.delete()
     no_afk()
     log = Logme(message)
-    await log.log_msg(astro, f"#AfkLogger {name} is Back Alive ! No Longer Afk\n AFK for : {total_afk_time} ")
+    await log.log_msg(app, f"#AfkLogger {name} is Back Alive ! No Longer Afk\n AFK for : {total_afk_time} ")
     message.continue_propagation()
