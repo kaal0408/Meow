@@ -9,5 +9,4 @@ tgcrypto
 heroku3
 pymongo[srv]
 pytz
-functools
 
