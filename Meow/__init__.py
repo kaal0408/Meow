@@ -2,8 +2,6 @@
 # (c) 2022 - 2023 KAAL
 # Don't Kang Bitch -! 
 
-
-
 import asyncio
 import os
 import sys
@@ -43,13 +41,20 @@ if sudo:
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
 #----------------------------------------------
 
+
+
 app = Client(
-    ":memory:",
-    session_name=SESSION,
+    name="[Meow]",
+    session_string=SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
+    in_memory=True,
     plugins={'root': 'Meow.Modules'}
 )
+
+
+
+
 
 hl = HNDLR[0]
 start_time = time.time()
