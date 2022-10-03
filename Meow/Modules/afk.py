@@ -12,7 +12,7 @@ from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
 from . import *
-from misc import edit_or_reply
+from misc import edit_or_reply, manjeet
 
 from database.afkdb import (
     no_afk,
@@ -43,7 +43,7 @@ async def set_afk(_, message: Message):
     await pablo.edit(msg)
 
       
-@app(filters.mentioned & ~filters.me & ~filters.bot & filters.incoming)
+@manjeet(filters.mentioned & ~filters.me & ~filters.bot & filters.incoming)
 async def afk_er(app, message: Message):
     lol = check_afk()
     if not lol:
