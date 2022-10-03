@@ -2,7 +2,7 @@ import os
 import logging
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
-from startup.config import MONGO_DB
+from Meow import MONGO_DB
 
 
 mongodb = MongoClient(MONGO_DB)
@@ -16,4 +16,4 @@ except ConnectionFailure:
 
 
 
-dtbs = mongodb["Astro"]
+dtbs = mongodb["app"]
