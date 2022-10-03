@@ -5,7 +5,7 @@ import glob
 import importlib
 import ntpath
 from pyrogram.types import Message
-from Meow.config import SUDO_USERS as SUDO
+from Meow import SUDO_USERS as SUDO
 from Meow import app
 from pyrogram import enums
 
