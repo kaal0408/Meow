@@ -5,8 +5,8 @@ import glob
 import importlib
 import ntpath
 from pyrogram.types import Message
-from startup.config import SUDO
-from startup.client import astro
+from Meow.config import SUDO_USERS as SUDO
+from Meow.client import app
 from pyrogram import enums
 
 
