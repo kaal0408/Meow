@@ -1,7 +1,7 @@
 # Thanks to Friday!
 
-from startup.client import astro
-from startup.config import PVT_GRP, TIMEZONE
+from Meow import app
+from Meow import LOG_GRP, TIMEZONE
 from pyrogram import StopPropagation, filters, ContinuePropagation
 from pyrogram.handlers import MessageHandler
 from datetime import datetime
@@ -13,9 +13,9 @@ import pytz
 def dynamic(filter_s):
     """Simple Decorator To Handel Custom Filters"""
     def decorator(func):
-        async def wrapper(astro, message):
+        async def wrapper(app, message):
             try:
-                await func(astro, message)
+                await func(app, message)
             except StopPropagation:
                 raise StopPropagation
             except ContinuePropagation:
@@ -33,7 +33,7 @@ def dynamic(filter_s):
                     )
                 text += "\n\n__You can Forward This to @Astro_HelpChat, If You Think This is A Error!__"
                 try:
-                    await astro.send_message(PVT_GRP, text)
+                    await app.send_message(PVT_GRP, text)
                 except Exception:
                     pass
         astro.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
