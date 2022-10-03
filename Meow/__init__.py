@@ -23,7 +23,7 @@ ALIVE_PIC = os.getenv("ALIVE_PIC", "")
 ALIVE_MSG = os.getenv("ALIVE_MSG", "")
 PING_MSG = os.getenv("PING_MSG", "")
 SESSION = os.getenv("SESSION", None)
-
+TIMEZONE = os.environ.get("TIMEZONE", "")
 LOGS_CHANNEL = os.getenv("LOGS_CHANNEL", None)
 
     
