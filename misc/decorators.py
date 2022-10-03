@@ -36,6 +36,6 @@ def manjeet(filter_s):
                     await app.send_message(LOGS_CHANNEL, text)
                 except Exception:
                     pass
-        astro.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
+        app.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
         return wrapper
     return decorator
