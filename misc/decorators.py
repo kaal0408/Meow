@@ -10,7 +10,7 @@ import logging
 import pytz
 
 
-def dynamic(filter_s):
+def manjeet(filter_s):
     """Simple Decorator To Handel Custom Filters"""
     def decorator(func):
         async def wrapper(app, message):
