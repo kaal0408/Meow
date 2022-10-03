@@ -6,3 +6,8 @@ asyncio
 python-dotenv
 tgcrypto
 
+heroku3
+pymongo[srv]
+pytz
+functools
+
