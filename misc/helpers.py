@@ -6,7 +6,7 @@ import importlib
 import ntpath
 from pyrogram.types import Message
 from Meow.config import SUDO_USERS as SUDO
-from Meow.client import app
+from Meow import app
 from pyrogram import enums
 
 
@@ -77,7 +77,7 @@ async def is_admin_or_owner(message, user_id) -> bool:
 async def edit_or_send_as_file(
     text: str,
     message: Message,
-    client: astro,
+    client: app,
     caption: str = "`Result!`",
     file_name: str = "result",
     parse_mode=enums.ParseMode.MARKDOWN,
