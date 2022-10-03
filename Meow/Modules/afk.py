@@ -12,7 +12,7 @@ from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
 from . import *
-from misc import edit_or_reply, manjeet, get_text, edit_or_send_as_file, get_user, is_admin_or_owner
+from misc import edit_or_reply, manjeet, get_text
 from database.afkdb import (
     no_afk,
     go_afk,
