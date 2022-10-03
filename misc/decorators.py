@@ -1,7 +1,7 @@
 # Thanks to Friday!
 
 from Meow import app
-from Meow import LOG_GRP, TIMEZONE
+from Meow import LOGS_CHANNEL, TIMEZONE
 from pyrogram import StopPropagation, filters, ContinuePropagation
 from pyrogram.handlers import MessageHandler
 from datetime import datetime
@@ -31,9 +31,9 @@ def dynamic(filter_s):
                 text += datetime_tz.strftime(
                         "**Date :** `%Y-%m-%d` \n**Time :** `%H:%M:%S`"
                     )
-                text += "\n\n__You can Forward This to @Astro_HelpChat, If You Think This is A Error!__"
+                text += "\n\n__You can Forward This to @Murat_30, If You Think This is A Error!__"
                 try:
-                    await app.send_message(PVT_GRP, text)
+                    await app.send_message(LOGS_CHANNEL, text)
                 except Exception:
                     pass
         astro.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
