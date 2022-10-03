@@ -11,7 +11,7 @@ mongodb = MongoClient(MONGO_DB)
 try:
     mongodb.server_info()
 except ConnectionFailure:
-    logging.error("Invalid Mongo DB URL. Please Check Your Credentials! Astro2.0 is Exiting!")
+    logging.error("Invalid Mongo DB URL. Please Check Your Credentials! Meow userbot is Exiting!")
     quit(1)
 
 
