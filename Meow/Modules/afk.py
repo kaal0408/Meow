@@ -19,6 +19,16 @@ from database.afkdb import (
     check_afk
 )
 
+class Logme:
+    def init(self, message):
+        self.chat_id = LOGS_CHANNEL
+        self.message = message
+    async def fwd_msg_to_log_chat(self):
+        try:
+            return await self.message.forward(self.chat_id)
+        except BaseException as e: 
+            logging.error(str(e))
+            return None
 
 
 @app.on_message(filters.user(SUDO_USERS) & filters.command(["afk"], prefixes=HNDLR))
