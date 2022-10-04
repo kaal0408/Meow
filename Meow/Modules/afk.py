@@ -12,22 +12,6 @@ from pyrogram.types import Message
 from Meow import *
 
 
-
-
-
-
-app.CMD_HELP.update(
-    {"afk": (
-        "afk",
-        {
-        "afk" : "away from keyboard, use `#afk` for important talk."
-        }
-        )
-    }
-)
-
-
-
 handlers = []
 
 
