@@ -32,13 +32,8 @@ handlers = []
 
 
 
-@app.on_message(
-    gen(
-        commands="afk",
-        exclude=["sudo"]
-    ),
-    group=0
-)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["join"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["join"], prefixes=HNDLR))
 async def afk_handler(_, m: Message):
     """
         name::
@@ -121,7 +116,7 @@ async def offlinemention_handler(_, m: Message):
             cid = m.chat.id if m.chat and m.chat.id else 0
 
             await app.send_message(
-                app.LOG_CHAT,
+                app.LOG_CHANNEL,
                 f"""#mention\n\n
                 **User:** `{m.from_user.first_name}`\n
                 **Id:** {m.from_user.id}\n
