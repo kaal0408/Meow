@@ -11,7 +11,7 @@ import asyncio
 from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
-from . import *
+from . import Logme
 from misc import edit_or_reply, manjeet, get_text, Logme
 from database.afkdb import (
     no_afk,
