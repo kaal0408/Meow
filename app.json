@@ -43,6 +43,11 @@
             "value": "-1001547159095",
             "required": false
         },
+       "TIMEZONE": {
+            "description": "Your Country Time Zone!\nGet yours from: https://www.timezoneconverter.com/cgi-bin/findzone.tzc",
+            "required": false,
+            "value": "Asia/Kolkata"
+        },
       "HNDLR": {
             "description": "Your Spam Userbot's Command handler",
             "value": ".",
