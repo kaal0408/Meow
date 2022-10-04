@@ -97,3 +97,15 @@ async def edit_or_send_as_file(
         return
     else:
         return await message.edit(text, parse_mode=parse_mode)
+
+
+class Logme:
+    def init(self, message):
+        self.chat_id = LOGS_CHANNEL
+        self.message = message
+    async def fwd_msg_to_log_chat(self):
+        try:
+            return await self.message.forward(self.chat_id)
+        except BaseException as e: 
+            logging.error(str(e))
+            return None
