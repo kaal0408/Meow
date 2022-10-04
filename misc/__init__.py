@@ -8,5 +8,4 @@ __all__ = (
     "edit_or_send_as_file",
     "get_user",
     "is_admin_or_owner"
-    "Logme"
 )
