@@ -4,11 +4,13 @@
 
 import time
 
-from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram.handlers import MessageHandler
+from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL)
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from Meow import *
 
-from main import app, gen
 
 
 
