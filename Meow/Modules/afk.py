@@ -32,8 +32,8 @@ handlers = []
 
 
 
-@app.on_message(filters.user(SUDO_USERS) & filters.command(["join"], prefixes=HNDLR))
-@app.on_message(filters.me & filters.command(["join"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["afk"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["afk"], prefixes=HNDLR))
 async def afk_handler(_, m: Message):
     """
         name::
