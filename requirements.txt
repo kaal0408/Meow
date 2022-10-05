@@ -10,3 +10,14 @@ heroku3
 pymongo[srv]
 pytz
 
+
+pytube
+pillow
+spotipy
+aiohttp
+aiofiles
+pyrogram==1.4.16
+tgcrypto
+py-tgcalls==0.8.2
+youtube-search-python
+git+https://github.com/LEGEND-AI/downloader
