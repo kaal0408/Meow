@@ -10,4 +10,32 @@ heroku3
 pymongo[srv]
 pytz
 
+aiohttp
+aiofiles
+ffmpeg-python
+pillow
+hachoir
+lyricsgenius
+py-tgcalls
+wget
+youtube-search-python
+youtube-search
+speedtest-cli
+motor
+psutil
+requests
+rich
+dnspython
+yt-dlp==2021.11.10.1
+gitpython
+
+py-tgcalls==0.8.3
+requests
+python-arq
+youtube-search-python==1.4.6
+yt-dlp
+gTTS
+googletrans==4.0.0rc1
+
+
 
