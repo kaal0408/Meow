@@ -2,9 +2,9 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import HNDLR, call_py
-from MusicAndVideo.helpers.decorators import authorized_users_only
-from MusicAndVideo.helpers.handlers import skip_current_song, skip_item
-from MusicAndVideo.helpers.queues import QUEUE, clear_queue
+from Meow.Modules.helpers.decorators import authorized_users_only
+from Meow.Modules.helpers.handlers import skip_current_song, skip_item
+from Meow.Modules.helpers.queues import QUEUE, clear_queue
 
 
 @Client.on_message(filters.command(["skip"], prefixes=f"{HNDLR}"))
