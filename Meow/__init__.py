@@ -9,6 +9,7 @@ import time
 
 from dotenv import load_dotenv
 from pyrogram import Client, filters
+from pytgcalls import PyTgCalls
 
 
 if os.path.exists(".env"):
@@ -34,7 +35,10 @@ SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
 
-
+contact_filter = filters.create(
+    lambda _, __, message: (message.from_user and message.from_user.is_contact)
+    or message.outgoing
+)
 
 
 
@@ -51,7 +55,7 @@ app = Client(
     in_memory=True,
     plugins={'root': 'Meow.Modules'}
 )
-
+call_py = PyTgCalls(app)
 
 
 
