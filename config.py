@@ -12,9 +12,9 @@ class Config:
         self.QUALITY: str = os.environ.get("QUALITY", "high").lower()
         self.LANGUAGE: str = os.environ.get("LANGUAGE", "en").lower()
         self.STREAM_MODE: str = (
-            "audio"
-            if (os.environ.get("STREAM_MODE", "audio").lower() == "audio")
-            else "video"
+            "video"
+            if (os.environ.get("STREAM_MODE", "video").lower() == "video")
+            else "audio"
         )
         self.ADMINS_ONLY: bool = os.environ.get("ADMINS_ONLY", False)
         self.SPOTIFY_CLIENT_ID: str = os.environ.get("SPOTIFY_CLIENT_ID", None)
