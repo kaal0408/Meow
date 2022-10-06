@@ -4,7 +4,7 @@
 # Contribution by @Alone_loverboy
 from pyrogram import idle
 import asyncio
-from . import (app, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB )
+from . import (app, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS  )
 
 if app:
     app.start()
