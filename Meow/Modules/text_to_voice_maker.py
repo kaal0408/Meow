@@ -18,7 +18,8 @@ def convert(text):
     return audio
 
 
-@Client.on_message(filters.command(["tts"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["tts"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["tts"], prefixes=HNDLR))
 async def text_to_speech(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("💡 REPLY TO SOME TEXT !")
