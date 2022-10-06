@@ -98,7 +98,7 @@ def handle_error(func: Callable) -> Callable:
                 chat_id, load(lang)["errorMessage"]
             )
             await pyro_client.send_message(
-                config.SUDO_UERS[0],
+                config.SUDO_USERS[0],
                 f"-------- START CRASH LOG --------\n\n┌ <b>ID:</b> <code>{id}</code>\n├ <b>Chat:</b> <code>{chat.id}</code>\n├ <b>Date:</b> <code>{date}</code>\n├ <b>Group:</b> <a href='{error_msg.link}'>{chat.title}</a>\n└ <b>Traceback:</b>\n<code>{format_exc()}</code>\n\n-------- END CRASH LOG --------",
                 parse_mode="html",
                 disable_web_page_preview=True,
