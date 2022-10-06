@@ -16,7 +16,8 @@ from yt_dlp import YoutubeDL
 from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
 
-@Client.on_message(filters.command(["song", "music"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["song"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["song"], prefixes=HNDLR))
 async def song(client, message: Message):
     urlissed = get_text(message)
     if not urlissed:
