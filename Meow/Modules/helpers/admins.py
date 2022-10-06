@@ -2,8 +2,8 @@ from typing import List
 
 from pyrogram.types import Chat
 
-from MusicAndVideo.helpers.get_admins import get as gett
-from MusicAndVideo.helpers.get_admins import set
+from Meow.Modules.helpers.get_admins import get as gett
+from Meow.Modules.helpers.get_admins import set
 
 
 async def get_administrators(chat: Chat) -> List[int]:
