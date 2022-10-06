@@ -1,9 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from config import HNDLR
-from MusicAndVideo.helpers.get_file_id import get_file_id
-
+from Meow.Modules.helpers.get_file_id import get_file_id
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app
 
 @Client.on_message(filters.command(["id"], prefixes=f"{HNDLR}"))
 async def showid(_, message: Message):
