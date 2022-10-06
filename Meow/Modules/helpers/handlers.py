@@ -10,7 +10,8 @@ from pytgcalls.types.input_stream.quality import (
 )
 from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 
-from config import call_py
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app, call_py
+
 from Meow.Modules.helpers.queues import QUEUE, clear_queue, get_queue, pop_an_item
 
 
