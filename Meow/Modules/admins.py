@@ -7,8 +7,8 @@ from Meow.Modules.helpers.handlers import skip_current_song, skip_item
 from Meow.Modules.helpers.queues import QUEUE, clear_queue
 
 
-@Client.on_message(filters.command(["skip"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["skip"], prefixes=HNDLR))
 async def skip(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -41,8 +41,8 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(filters.command(["end", "stop"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["end"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["end"], prefixes=HNDLR))
 async def stop(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -57,8 +57,8 @@ async def stop(client, m: Message):
         await m.reply("**❌ NOTHING IS PLAYING!**")
 
 
-@Client.on_message(filters.command(["pause"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["pause"], prefixes=HNDLR))
 async def pause(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -74,8 +74,8 @@ async def pause(client, m: Message):
         await m.reply("** ❌ NOTHING IS PLAYING!**")
 
 
-@Client.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["resume"], prefixes=HNDLR))
 async def resume(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
