@@ -3,7 +3,7 @@ from typing import Callable
 from pyrogram import Client
 from pyrogram.types import Message
 
-from config import SUDO_USERS
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app, call_py
 from Meow.Modules.helpers.admins import get_administrators
 
 
