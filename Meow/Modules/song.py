@@ -13,8 +13,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
-
-from config import HNDLR
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
 
 @Client.on_message(filters.command(["song", "music"], prefixes=f"{HNDLR}"))
