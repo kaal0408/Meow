@@ -1,5 +1,4 @@
 import asyncio
-
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import StreamType
@@ -11,8 +10,7 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from youtubesearchpython import VideosSearch
-
-from config import HNDLR, bot, call_py
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app as bot,call_py
 from MusicAndVideo.helpers.other.generator.chattitle import CHAT_TITLE
 from MusicAndVideo.helpers.other.generator.thumbnail import gen_thumb
 from MusicAndVideo.helpers.queues import QUEUE, add_to_queue, get_queue
