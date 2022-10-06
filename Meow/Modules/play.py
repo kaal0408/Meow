@@ -82,7 +82,8 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["mplay"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["play"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["play"], prefixes=HNDLR))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -197,7 +198,8 @@ async def play(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["vplay"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["vplay"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["vplay"], prefixes=HNDLR))
 async def vplay(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -331,12 +333,13 @@ async def vplay(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["playfrom"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["playform"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["playform"], prefixes=HNDLR))
 async def playfrom(client, m: Message):
     chat_id = m.chat.id
     if len(m.command) < 2:
         await m.reply(
-            f"**USE:** \n\n`{HNDLR}playfrom [chat_id/username]` \n`{HNDLR}playfrom [chat_id/username]`"
+            f"**USE:** \n\n`playfrom [chat_id/username]` \n`playfrom [chat_id/username]`"
         )
     else:
         args = m.text.split(maxsplit=1)[1]
@@ -385,7 +388,8 @@ async def playfrom(client, m: Message):
 
 
 
-@Client.on_message(filters.command(["playlist", "queue"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["queue"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["queue"], prefixes=HNDLR))
 async def playlist(client, m: Message):
     chat_id = m.chat.id
     if chat_id in QUEUE:
