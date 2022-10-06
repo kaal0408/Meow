@@ -11,9 +11,9 @@ from pytgcalls.types.input_stream.quality import (
 )
 from youtubesearchpython import VideosSearch
 from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app as bot,call_py
-from MusicAndVideo.helpers.other.generator.chattitle import CHAT_TITLE
-from MusicAndVideo.helpers.other.generator.thumbnail import gen_thumb
-from MusicAndVideo.helpers.queues import QUEUE, add_to_queue, get_queue
+from Meow.Modules.helpers.other.generator.chattitle import CHAT_TITLE
+from Meow.Modules.helpers.other.generator.thumbnail import gen_thumb
+from Meow.Modules.helpers.queues import QUEUE, add_to_queue, get_queue
 
 
 # music player
