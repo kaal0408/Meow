@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from config import HNDLR, call_py
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app, call_py
 from Meow.Modules.helpers.decorators import authorized_users_only
 from Meow.Modules.helpers.handlers import skip_current_song, skip_item
 from Meow.Modules.helpers.queues import QUEUE, clear_queue
