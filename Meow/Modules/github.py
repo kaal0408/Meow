@@ -1,8 +1,8 @@
 import aiohttp
 from pyrogram import Client, filters
 
-from config import HNDLR
-from MusicAndVideo.helpers.merrors import capture_err
+from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
+from Meow.modules.helpers.merrors import capture_err
 
 
 @Client.on_message(filters.command(["git", "github"], prefixes=f"{HNDLR}"))
