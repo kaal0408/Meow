@@ -5,7 +5,8 @@ from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 from Meow.modules.helpers.merrors import capture_err
 
 
-@Client.on_message(filters.command(["git", "github"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["git"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["git"], prefixes=HNDLR))
 @capture_err
 async def github(_, message):
     if len(message.command) != 2:
