@@ -153,7 +153,6 @@ async def play(client, m: Message):
                 userid = m.from_user.id
                 srrf = m.chat.title
                 ctitle = await CHAT_TITLE(srrf)
-                thumb = await gen_thumb(thumbnail, title, userid, ctitle)
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
                     await huehue.edit(f"**YTDL ERROR ⚠️** \n\n`{ytlink}`")
