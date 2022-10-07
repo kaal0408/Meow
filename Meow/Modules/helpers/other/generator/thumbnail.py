@@ -18,20 +18,20 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
-                f = await aiofiles.open(f"search/thumb{userid}.png", mode="wb")
+                f = await aiofiles.open(f"cache/thumb{userid}.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-    image1 = Image.open(f"search/thumb{userid}.png")
-    image2 = Image.open(f"MusicAndVideo/helpers/other/choose/rrc.png")
+    image1 = Image.open(f"cache/thumb{userid}.png")
+    image2 = Image.open(f"Meow/Modules/helpers/other/choose/rrc.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save(f"search/temp{userid}.png")
-    img = Image.open(f"search/temp{userid}.png")
+    Image.alpha_composite(image5, image6).save(f"cache/temp{userid}.png")
+    img = Image.open(f"cache/temp{userid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("MusicAndVideo/helpers/other/choose/Roboto-Light.ttf", 55)
-    font2 = ImageFont.truetype("MusicAndVideo/helpers/other/choose/finalfont.ttf", 65)
+    font = ImageFont.truetype("Meow/Modules/helpers/other/choose/Roboto-Light.ttf", 55)
+    font2 = ImageFont.truetype("Meow/Modules/helpers/other/choose/finalfont.ttf", 65)
     draw.text(
         (20, 630),
         f"{title[:25]}...",
@@ -48,8 +48,8 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
         stroke_fill="black",
         font=font,
     )
-    img.save(f"search/final{userid}.png")
-    os.remove(f"search/temp{userid}.png")
-    os.remove(f"search/thumb{userid}.png")
-    final = f"search/final{userid}.png"
+    img.save(f"cache/final{userid}.png")
+    os.remove(f"cache/temp{userid}.png")
+    os.remove(f"cache/thumb{userid}.png")
+    final = f"cache/final{userid}.png"
     return final
