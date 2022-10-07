@@ -18,7 +18,7 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
-                f = await aiofiles.open(f"search/thumb{userid}.png", mode="wb")
+                f = await aiofiles.open(f"https://telegra.ph/file/3c2932815330a143fa1a8.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
     image1 = Image.open(f"https://telegra.ph/file/3c2932815330a143fa1a8.png")
@@ -28,7 +28,7 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
     Image.alpha_composite(image5, image6).save(f"https://telegra.ph/file/3c2932815330a143fa1a8.png")
-    img = Image.open(f"search/temp{userid}.png")
+    img = Image.open(f"https://telegra.ph/file/3c2932815330a143fa1a8.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("Meow/Modules/helpers/other/choose/Roboto-Light.ttf", 55)
     font2 = ImageFont.truetype("Meow/Modules/helpers/other/choose/finalfont.ttf", 65)
