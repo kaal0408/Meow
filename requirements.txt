@@ -36,6 +36,6 @@ youtube-search-python==1.4.6
 yt-dlp
 gTTS
 googletrans==4.0.0rc1
-
+ffmpeg-python
 
 
