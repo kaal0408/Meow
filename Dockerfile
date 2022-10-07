@@ -1,6 +1,6 @@
 FROM debian:latest
 FROM node:16-buster-slim
-FROM nikolaik/python-nodejs:python3.9-nodejs18
+FROM nikolaik/python-nodejs:python3.9-nodejs16
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
     && apt-get clean \
