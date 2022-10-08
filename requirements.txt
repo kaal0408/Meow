@@ -10,3 +10,7 @@ heroku3
 pymongo[srv]
 pytz
 
+
+asyncio
+googletrans
+gtts
