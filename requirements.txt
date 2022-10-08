@@ -15,4 +15,5 @@ asyncio
 googletrans
 gtts
 aiohttp
-functools
+aiofiles
+pillow
