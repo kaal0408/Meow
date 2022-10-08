@@ -14,3 +14,5 @@ pytz
 asyncio
 googletrans
 gtts
+aiohttp
+functools
