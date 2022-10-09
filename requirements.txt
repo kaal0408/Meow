@@ -11,9 +11,15 @@ pymongo[srv]
 pytz
 
 
-asyncio
 googletrans
 gtts
 aiohttp
 aiofiles
 pillow
+
+
+pyromod
+dnspython
+requests
+
+
