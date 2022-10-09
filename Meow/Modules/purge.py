@@ -1,6 +1,3 @@
-# This file is Originally Written By @okay-retard on GitHub
-# The Author (Jayant Kageri) just Ported this for Devloper Userbot
-# (C) 2021 Jayant Kageri
 
 import math
 from datetime import datetime
@@ -8,8 +5,9 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import Message
 from inspect import getfullargspec
-from _pyrogram import app
-from config import PREFIX
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from pyrogram import Client, filters
+
 
 async def edrep(msg: Message, **kwargs):
     func = msg.edit_text if msg.from_user.is_self else msg.reply
@@ -27,7 +25,9 @@ async def admin_check(message: Message) -> bool:
     return check_status.status in admin_strings
 
 
-@app.on_message(filters.command("purge", PREFIX) & filters.me)
+
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["purge"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["purge"], prefixes=HNDLR))
 async def purge_message(client, message):
     if message.chat.type in (("supergroup", "channel")):
         is_admin = await admin_check(message)
@@ -66,7 +66,9 @@ async def purge_message(client, message):
     await ms_g.delete()
 
 
-@app.on_message(filters.command("del", PREFIX) & filters.me)
+
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["del"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["del"], prefixes=HNDLR))
 async def delete_replied(client, message):
     msg_ids = [message.message_id]
     if message.reply_to_message:
