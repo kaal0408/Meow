@@ -2,7 +2,7 @@ from time import sleep, time
 
 from pyrogram.types import Message
 
-from _pyrogram import app
+from Meow import app
 
 
 async def CheckAdmin(message: Message):
