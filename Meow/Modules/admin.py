@@ -1,6 +1,3 @@
-# This file is Originally Written By @okay-retard and @jayantkageri on GitHub
-# The Author (Jayant Kageri) just Ported this for Devloper Userbot
-# (C) 2021 Jayant Kageri
 
 import time
 import asyncio
@@ -10,34 +7,14 @@ from pyrogram.types import Message, ChatPermissions
 from pyrogram.errors import UserAdminInvalid
 from pyrogram.methods.chats.get_chat_members import Filters as ChatMemberFilters
 
-from _pyrogram import app, CMD_HELP
-from _pyrogram.helpers.pyrohelper import get_arg, get_args
-from _pyrogram.helpers.adminhelpers import CheckAdmin
-from config import PREFIX
+from Meow.helpers.pyrohelper import get_arg, get_args
+from Meow.helpers.adminhelpers import CheckAdmin
 
-CMD_HELP.update(
-    {
-        "Admin Tools": """
- **Admin Tools** 
-  `ban` -> Bans user indefinitely.
-  `unban` -> Unbans the user.
-  `promote` [optional title] -> Promotes a user.
-  `demote` _> Demotes a user.
-  `mute` -> Mutes user indefinitely.
-  `unmute` -> Unmutes the user.
-  `kick` -> Kicks the user out of the group.
-  `gmute` -> Doesn't lets a user speak(even admins).
-  `ungmute` -> Inverse of what gmute does.
-  `pin` -> pins a message.
-  `del` -> delete a message.
-  `purge` -> purge message(s)
-  `invite` -> add user to chat.
-"""
-    }
-)
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from pyrogram import Client, filters
 
-
-@app.on_message(filters.command("ban", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["ban"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["ban"], prefixes=HNDLR))
 async def ban_hammer(_, message: Message):
     reply = message.reply_to_message
     if reply:
@@ -54,7 +31,8 @@ async def ban_hammer(_, message: Message):
     except Exception as e:
         await message.edit(f"{e}")
 
-@app.on_message(filters.command("unban", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["unban"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["unban"], prefixes=HNDLR))
 async def unban(_, message: Message):
     reply = message.reply_to_message
     if reply:
@@ -83,8 +61,8 @@ mute_permission = ChatPermissions(
     can_pin_messages=False,
 )
 
-
-@app.on_message(filters.command("mute", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["mute"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["mute"], prefixes=HNDLR))
 async def mute_hammer(_, message: Message):
     reply = message.reply_to_message
     if reply:
@@ -114,7 +92,8 @@ unmute_permissions = ChatPermissions(
 )
 
 
-@app.on_message(filters.command("unmute", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["unmute"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["unmute"], prefixes=HNDLR))
 async def unmute(_, message: Message):
     reply = message.reply_to_message
     if reply:
@@ -128,7 +107,9 @@ async def unmute(_, message: Message):
     except Exception as e:
         await message.edit(f"{e}")
 
-@app.on_message(filters.command("kick", PREFIX) & filters.me)
+
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["kick"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["kick"], prefixes=HNDLR))
 async def kick_usr(_, message: Message):
     reply = message.reply_to_message
     if reply:
@@ -143,7 +124,8 @@ async def kick_usr(_, message: Message):
     except Exception as e:
         await message.edit(f"{e}")
 
-@app.on_message(filters.command("pin", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["pin"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["pin"], prefixes=HNDLR))
 async def pin_message(_, message: Message):
     # First of all check if its a group or not
     if message.chat.type in ["group", "supergroup"]:
@@ -194,7 +176,8 @@ async def pin_message(_, message: Message):
     await asyncio.sleep(3)
     await message.delete()
 
-@app.on_message(filters.command("promote", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["promote"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["promote"], prefixes=HNDLR))
 async def promote(client, message: Message):
     try:
         title = "Admin"
@@ -222,7 +205,8 @@ async def promote(client, message: Message):
         except:
             pass
 
-@app.on_message(filters.command("demote", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["demote"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["demote"], prefixes=HNDLR))
 async def demote(client, message: Message):
     try:
         reply = message.reply_to_message
@@ -250,7 +234,8 @@ async def demote(client, message: Message):
     except Exception as e:
         await message.edit(f"{e}")
 
-@app.on_message(filters.command("invite", PREFIX) & filters.me & ~filters.private)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["add"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["add"], prefixes=HNDLR))
 async def invite(client, message):
     reply = message.reply_to_message
     if reply:
