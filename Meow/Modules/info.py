@@ -1,6 +1,3 @@
-# This file is Originally Written By @okay-retard on GitHub
-# The Author (Jayant Kageri) just Ported this for Devloper Userbot
-# (C) 2021 Jayant Kageri
 
 import os
 from datetime import datetime
@@ -9,8 +6,9 @@ from pyrogram import filters
 from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
-from _pyrogram import app
-from config import PREFIX
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from pyrogram import Client, filters
+
 
 
 def ReplyCheck(message: Message):
@@ -38,7 +36,8 @@ def FullName(user: User):
     return user.first_name + " " + user.last_name if user.last_name else user.first_name
 
 
-@app.on_message(filters.command("info", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["info"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["info"], prefixes=HNDLR))
 async def whois(client, message):
     cmd = message.command
     if not message.reply_to_message and len(cmd) == 1:
@@ -68,7 +67,8 @@ async def whois(client, message):
         )
 
 
-@app.on_message(filters.command("id", PREFIX) & filters.me)
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["id"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["id"], prefixes=HNDLR))
 async def id(client, message):
     text_unping = '<b>Chat ID:</b>'
     if message.chat.username:
