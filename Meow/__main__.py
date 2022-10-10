@@ -11,8 +11,8 @@ from . import (app as Manjeet, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS 
 
 #Music
 
+from . import HNDLR 
 
-#
 
 import os
 import json
