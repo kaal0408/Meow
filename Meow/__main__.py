@@ -13,7 +13,7 @@ from . import (app as Manjeet, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS 
 
 from . import HNDLR 
 
-
+from pytgcalls import idle as pyidle
 import os
 import json
 import shutil
@@ -455,5 +455,8 @@ async def left_vc(_, chat_id: int):
 
 
 client.start()
+idle()
 pytgcalls.run()
+pyidle()
+
 
