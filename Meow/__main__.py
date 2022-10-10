@@ -7,10 +7,6 @@ import asyncio
 from . import (app as Manjeet, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
 
 
-if Manjeet:
-    Manjeet.start()
-    idle()
-    print("Meow Deployed Successfully✅")
 
 
 #Music
@@ -36,61 +32,12 @@ from core import (
     get_spotify_playlist, get_youtube_playlist)
 
 
-REPO = """
-👨‍💻**Music Player**👨‍💻
-- Repo: [SourceCode](https://t.me/DollxSpam_BOT)
-- ⚜ [Owner](https://t.me/N1xDOLL) ⚜
-"""
 
-if config.BOT_TOKEN:
-    bot = Client(
-        "Music",
-        api_id=config.API_ID,
-        api_hash=config.API_HASH,
-        bot_token=config.BOT_TOKEN,
-    )
-    client = bot
-else:
-    client = app
+client = app
 
 
-@client.on_message(
-    filters.command("repo", config.PREFIXES) & ~filters.bot & ~filters.edited
-)
-@handle_error
-async def repo(_, message: Message):
-    await message.reply_text(REPO, disable_web_page_preview=True)
-
-
-@client.on_message(
-    filters.command("ping", config.PREFIXES) & ~filters.bot & ~filters.edited
-)
-@handle_error
-async def ping(_, message: Message):
-    await message.reply_text(f"⭐ **Pong!** ⭐\n`{await pytgcalls.ping} ms`")
-
-
-@client.on_message(
-    filters.command("start", config.PREFIXES) & ~filters.bot & ~filters.edited
-)
-@language
-@handle_error
-async def start(_, message: Message, lang):
-    await message.reply_text(lang["startText"] % message.from_user.mention)
-
-
-@client.on_message(
-    filters.command("help", config.PREFIXES) & ~filters.private & ~filters.edited
-)
-@language
-@handle_error
-async def help(_, message: Message, lang):
-    await message.reply_text(lang["helpText"].replace("<prefix>", config.PREFIXES[0]))
-
-
-@client.on_message(
-    filters.command(["p", "play"], config.PREFIXES) & ~filters.private & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["play"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["play"], prefixes=HNDLR))
 @register
 @language
 @handle_error
@@ -122,12 +69,8 @@ async def play_stream(_, message: Message, lang):
         )
         await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["radio", "stream"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["radio"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["radio"], prefixes=HNDLR))
 @register
 @language
 @handle_error
@@ -176,12 +119,8 @@ async def live_stream(_, message: Message, lang):
         )
         await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["skip", "next"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["skip"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -212,10 +151,8 @@ async def skip_track(_, message: Message, lang):
                 k = await message.reply_text(lang["notActive"])
             await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["m", "mute"], config.PREFIXES) & ~filters.private & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["mute"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["mute"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -229,12 +166,8 @@ async def mute_vc(_, message: Message, lang):
         k = await message.reply_text(lang["notActive"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["um", "unmute"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["unmute"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["unmute"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -248,12 +181,8 @@ async def unmute_vc(_, message: Message, lang):
         k = await message.reply_text(lang["notActive"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["ps", "pause"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["pause"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -267,12 +196,8 @@ async def pause_vc(_, message: Message, lang):
         k = await message.reply_text(lang["notActive"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["rs", "resume"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["resume"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -286,12 +211,8 @@ async def resume_vc(_, message: Message, lang):
         k = await message.reply_text(lang["notActive"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["stop", "leave"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["vcleave"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["vcleave"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -308,12 +229,8 @@ async def leave_vc(_, message: Message, lang):
         k = await message.reply_text(lang["notActive"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["list", "queue"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["queue"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["queue"], prefixes=HNDLR))
 @register
 @language
 @handle_error
@@ -326,12 +243,8 @@ async def queue_list(_, message: Message, lang):
         k = await message.reply_text(lang["queueEmpty"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["mix", "shuffle"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["shuffle"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["shuffle"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -345,12 +258,8 @@ async def shuffle_list(_, message: Message, lang):
         k = await message.reply_text(lang["queueEmpty"])
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["loop", "repeat"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["repeat"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["repeat"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -366,12 +275,8 @@ async def loop_stream(_, message: Message, lang):
         k = await message.reply_text(lang["loopMode"] % "Enabled")
     await delete_messages([message, k])
 
-
-@client.on_message(
-    filters.command(["mode", "switch"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["mode"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["mode"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -390,12 +295,8 @@ async def switch_mode(_, message: Message, lang):
 
 
     
-
-@client.on_message(
-    filters.command(["lang", "language"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["language"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["language"], prefixes=HNDLR))
 @register
 @language
 @only_admins
@@ -423,12 +324,8 @@ async def set_lang(_, message: Message, lang):
 
 
 
-
-@client.on_message(
-    filters.command(["pl", "playlist"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
+@client.on_message(filters.user(SUDO_USERS) & filters.command(["playlist"], prefixes=HNDLR))
+@client.on_message(filters.me & filters.command(["playlist"], prefixes=HNDLR))
 @register
 @language
 @handle_error
@@ -483,28 +380,6 @@ async def import_playlist(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["update", "restart"], config.PREFIXES)
-    & ~filters.private
-    & ~filters.edited
-)
-@language
-@handle_error
-async def update_restart(_, message: Message, lang):
-    check = await is_sudo(message)
-    if not check:
-        k = await message.reply_text(lang["notAllowed"])
-        return await delete_messages([message, k])
-    chats = all_groups()
-    stats = await message.reply_text(lang["update"])
-    for chat in chats:
-        try:
-            await pytgcalls.leave_group_call(chat)
-        except (NoActiveGroupCall, GroupCallNotFound):
-            pass
-    await stats.edit_text(lang["restart"])
-    shutil.rmtree("downloads", ignore_errors=True)
-    os.system(f"kill -9 {os.getpid()} && bash startup.sh")
 
 
 @pytgcalls.on_stream_end()
