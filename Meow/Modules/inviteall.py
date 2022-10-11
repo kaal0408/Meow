@@ -8,9 +8,9 @@ async def copy_members(client, message):
       chat_id = message.text.split(None, 2)[1]
       m = await message.reply("~ Processing...")
       c = 0
-      async for member in Client.get_chat_members(chat_id):
+      async for member in client.get_chat_members(chat_id):
             try:
-              await Client.iter_chat_members(message.chat.id, member.user.id)
+              await client.iter_chat_members(message.chat.id, member.user.id)
               c += 1
             except Exception:
               pass
