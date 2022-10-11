@@ -28,6 +28,7 @@ ydl = YoutubeDL(ydl_opts)
 app = Client(config.SESSION, api_id=config.API_ID, api_hash=config.API_HASH)
 pytgcalls = PyTgCalls(app)
 
+run = pytgcalls.start
 
 async def skip_stream(song: Song, lang):
     chat = song.request_msg.chat
@@ -152,3 +153,4 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
         else:
             print("WARNING: Invalid Quality Specified. Defaulting to High!")
             return AudioPiped(song.remote, HighQualityAudio(), song.headers)
+
