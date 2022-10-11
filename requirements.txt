@@ -17,14 +17,6 @@ aiohttp
 aiofiles
 pillow
 
-pytube
-pillow
-spotipy
-python-dotenv
-py-tgcalls==0.8.2
-youtube-search-python
-git+https://github.com/LEGEND-AI/downloader
-
 
 
 
