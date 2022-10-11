@@ -27,6 +27,26 @@
       "SESSION": {
         "description": "PYROGRAM SESSION Session",
         "value": "",
+        "required": true
+      },
+      "SESSION2": {
+        "description": "PYROGRAM SESSION Session",
+        "value": "",
+        "required": false
+      },
+      "SESSION3": {
+        "description": "PYROGRAM SESSION Session",
+        "value": "",
+        "required": false
+      },
+      "SESSION4": {
+        "description": "PYROGRAM SESSION Session",
+        "value": "",
+        "required": false
+      },
+      "SESSION5": {
+        "description": "PYROGRAM SESSION Session",
+        "value": "",
         "required": false
       },
       "MONGO_DB": {
