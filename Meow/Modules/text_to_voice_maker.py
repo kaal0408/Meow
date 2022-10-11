@@ -6,7 +6,7 @@ from googletrans import Translator
 from gtts import gTTS
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS, app
+from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 
 def convert(text):
     audio = BytesIO()
