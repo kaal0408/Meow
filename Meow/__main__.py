@@ -5,11 +5,9 @@
 from pyrogram import idle
 import asyncio
 from . import (app, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
-from pytgcalls import idle as pyidle
-from core.stream import run
 
 app.start()
-run()
+app.send_message(LOGS_CHANNEL, Meow is deploy successfully)
 idle()
 print("UserBot Started")
 
