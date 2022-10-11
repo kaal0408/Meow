@@ -6,7 +6,8 @@ from pyrogram import filters
 from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
-from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from Meow import (app, app2, app3, app4, app5 )
 from pyrogram import Client, filters
 
 
