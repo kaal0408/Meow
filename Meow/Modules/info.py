@@ -36,8 +36,8 @@ def FullName(user: User):
     return user.first_name + " " + user.last_name if user.last_name else user.first_name
 
 
-@app.on_message(filters.user(SUDO_USERS) & filters.command(["info"], prefixes=HNDLR))
-@app.on_message(filters.me & filters.command(["info"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["info"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["info"], prefixes=HNDLR))
 async def whois(client, message):
     cmd = message.command
     if not message.reply_to_message and len(cmd) == 1:
@@ -67,8 +67,8 @@ async def whois(client, message):
         )
 
 
-@app.on_message(filters.user(SUDO_USERS) & filters.command(["id"], prefixes=HNDLR))
-@app.on_message(filters.me & filters.command(["id"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["id"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["id"], prefixes=HNDLR))
 async def id(client, message):
     text_unping = '<b>Chat ID:</b>'
     if message.chat.username:
