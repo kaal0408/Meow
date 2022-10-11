@@ -5,7 +5,7 @@ import sys
 import asyncio
 import re
 from random import choice
-from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL)
+from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from Meow.data import *
