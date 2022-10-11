@@ -10,7 +10,7 @@ async def copy_members(client, message):
       c = 0
       async for member in app.get_chat_members(chat_id):
             try:
-              await app.add_chat_members(message.chat.id, member.user.id)
+              await app.iter_chat_members(message.chat.id, member.user.id)
               c += 1
             except Exception:
               pass
