@@ -4,7 +4,7 @@
 # Contribution by @Alone_loverboy
 from pyrogram import idle
 import asyncio
-from . import (app as Manjeet, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
+from . import (app, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
 from pytgcalls import PyTgCalls
 from pytgcalls import idle as pyidle
 
