@@ -6,14 +6,13 @@ from pyrogram import idle
 import asyncio
 from . import (app, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
 from pytgcalls import idle as pyidle
-from core.stream import pytgcalls
+from core.stream import run
 
 app.start()
-print("UserBot Started")
-pytgcalls.start()
-print("Vc Client Started")
-pyidle()
+run()
 idle()
+print("UserBot Started")
+
 
 
 
