@@ -16,6 +16,7 @@ from core import (
     check_yt_url, extract_args, start_stream, shuffle_queue, delete_messages,
     get_spotify_playlist, get_youtube_playlist)
 
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 
 
 client = app
