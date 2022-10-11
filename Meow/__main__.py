@@ -7,7 +7,6 @@ import asyncio
 from . import (app, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
 
 app.start()
-app.send_message(LOGS_CHANNEL, Meow is deploy successfully)
 idle()
 print("UserBot Started")
 
