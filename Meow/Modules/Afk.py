@@ -1,5 +1,7 @@
 import asyncio
 from datetime import datetime
+from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from pyrogram import Client, filters
 
 import humanize
 from pyrogram import filters, Client
