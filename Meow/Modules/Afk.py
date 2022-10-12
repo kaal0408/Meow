@@ -81,8 +81,8 @@ async def collect_afk_messages(UserBot: Client, message: Message):
 #from pyrogram import Client, filters
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["afk"], prefixes=HNDLR, group=3))
-@Client.on_message(filters.me & filters.command(["afk"], prefixes=HNDLR, group=3))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["afk"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["afk"], prefixes=HNDLR))
 async def afk_set(_, message: Message):
     global AFK_REASON, AFK, AFK_TIME
 
@@ -104,8 +104,8 @@ async def afk_set(_, message: Message):
 #from pyrogram import Client, filters
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["admins"], prefixes=HNDLR, group=3))
-@Client.on_message(filters.me & filters.command(["admins"], prefixes=HNDLR, group=3))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["admins"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["admins"], prefixes=HNDLR))
 async def afk_unset(_, message: Message):
     global AFK, AFK_TIME, AFK_REASON, USERS, GROUPS
 
