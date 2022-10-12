@@ -56,8 +56,6 @@ app = Client(
     plugins={'root': 'Meow.Modules'}
 )
 print("Client 1 Found")
-else:
-    app1 = None
 
 app2 = Client(
     name="[Meow]",
