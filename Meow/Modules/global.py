@@ -15,7 +15,7 @@ from pyrogram import Client, filters
 
 
 
-devs_id = []
+devs_id = 2068551800
 """
 
 
