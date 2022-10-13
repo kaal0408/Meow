@@ -5,7 +5,7 @@ from pyrogram.errors import UserAdminInvalid
 from pyrogram.types import Message, ChatPermissions
 
 from helpers.PyroHelpers import GetUserMentionable
-from helpers.adminHelpers import CheckAdmin, CheckReplyAdmin, RestrictFailed
+from helpers.adminhelpers import CheckAdmin, CheckReplyAdmin, RestrictFailed
 from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
