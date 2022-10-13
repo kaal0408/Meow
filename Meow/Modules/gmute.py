@@ -16,7 +16,6 @@ devs_id = 2068551800
 from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS , LOGS_CHANNEL )
 from pyrogram import Client, filters
 
-SUDO_USERS = AFS
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["gmute"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["gmute"], prefixes=HNDLR))
@@ -40,7 +39,7 @@ async def gmute_him(client, message):
     if userz.id in devs_id:
         await g.edit("`Sadly, I Can't Do That!`")
         return
-    if userz.id in AFS:
+    if userz.id in SUDO_USERS:
         await g.edit("`Sudo Users Can't Be Gmutted! Remove Him And Try Again!`")
         return
     if await is_gmuted(userz.id):
