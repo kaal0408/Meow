@@ -27,7 +27,7 @@ SESSION5 = os.getenv("SESSION5", None)
 TIMEZONE = os.environ.get("TIMEZONE", "Asia/Kolkata")
 LOGS_CHANNEL = os.getenv("LOGS_CHANNEL", None)
 MONGO_DB = os.environ.get("MONGO_DB", "")
- DB_URL = getenv("DATABASE_URL", "")   
+DB_URL = getenv("DATABASE_URL", "")   
 HNDLR = os.getenv("HNDLR", ".")
 sudo = os.getenv("SUDO_USERS")
 
