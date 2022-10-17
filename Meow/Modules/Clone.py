@@ -37,8 +37,6 @@ async def clone(client: Client, message: Message):
   )
   await message.edit(f"**From now I'm** __{f_name}__")
     
-#from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
-#from pyrogram import Client, filters
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["revert"], prefixes=HNDLR))
