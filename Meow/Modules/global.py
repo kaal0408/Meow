@@ -10,7 +10,7 @@ from helpers.basic_helpers import (
     get_user,
     iter_chats,
 )
-from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS as AFS, LOGS_CHANNEL )
+from Meow import (app, HNDLR, SUDO_USERS as AFS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
 
