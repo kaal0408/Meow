@@ -4,7 +4,7 @@ import sys
 import asyncio
 import datetime
 import time
-from Meow import (app, app2, app3, app4, app5 )
+from Meow import app 
 from Meow import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time)
 from pyrogram import Client, filters
 from pyrogram.types import Message
