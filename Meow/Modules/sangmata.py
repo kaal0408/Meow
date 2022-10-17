@@ -6,7 +6,7 @@ from helpers.basic import edit_or_reply
 from pyrogram.errors import RPCError
 from pyrogram import * 
 from pyrogram.types import *
-from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
 
