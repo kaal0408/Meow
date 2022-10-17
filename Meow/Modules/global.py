@@ -52,8 +52,6 @@ async def gmute_him(client, message):
     await g.edit(gmu)
 """
 
-from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
-from pyrogram import Client, filters
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["ungmute"], prefixes=HNDLR))
@@ -84,8 +82,6 @@ async def gmute_him(client, message):
     await ug.edit(ugmu)
 
 
-from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
-from pyrogram import Client, filters
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["gban"], prefixes=HNDLR))
@@ -150,8 +146,6 @@ async def ungbun_him(client, message):
     ungbanned = f"**#Un_GBanned** \n**User :** [{userz.first_name}](tg://user?id={userz.id})"
     await ungbun.edit(ungbanned)
 
-#from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
-#from pyrogram import Client, filters
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["gbanlist"], prefixes=HNDLR))
