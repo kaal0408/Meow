@@ -7,7 +7,7 @@ from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton, Mes
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
 from Meow import (HNDLR, SUDO_USERS, LOGS_CHANNEL )
-from Meow import (app, app2, app3, app4, app5 )
+from Meow import app
 from pyrogram import Client, filters
 
 
