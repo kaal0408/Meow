@@ -1,6 +1,6 @@
 import aiohttp
 from pyrogram import Client, filters
-from Meow import (app, app2, app3, app4, app5 )
+from Meow import app
 from Meow import HNDLR, LOGS_CHANNEL, SUDO_USERS
 
 
