@@ -128,8 +128,6 @@ itachiemoji = [
     "⁭\n        {cj}{cj}{cj}{cj}\n   {cj}{cj}{cj}{cj}{cj}{cj}\n{cj}{cj}               {cj}{cj}\n{cj}{cj}               {cj}{cj}\n {cj}{cj}{cj}{cj}{cj}{cj}{cj}\n      {cj}{cj}{cj}{cj}{cj}{cj}\n                         {cj}{cj}\n                        {cj}{cj}\n  {cj}{cj}{cj}{cj}{cj}{cj}\n       {cj}{cj}{cj}{cj}\n",
 ]
 
-#from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
-#from pyrogram import Client, filters
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["emoji"], prefixes=HNDLR))
@@ -156,8 +154,6 @@ async def emoji(client: Client, message: Message):
     
     
 
-#from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
-#from pyrogram import Client, filters
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["cmoji"], prefixes=HNDLR))
