@@ -9,7 +9,7 @@ import time
 
 from dotenv import load_dotenv
 from pyrogram import Client, filters
-
+from pytgcalls import PyTgCalls
 
 
 if os.path.exists(".env"):
@@ -39,7 +39,10 @@ SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
 
-
+contact_filter = filters.create(
+    lambda _, __, message: (message.from_user and message.from_user.is_contact)
+    or message.outgoing
+)
 
 
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
@@ -58,6 +61,7 @@ if SESSION:
    print("Client 1 Found")
 else: 
    app = none
+call_py = PyTgCalls(app)
 
 if SESSION2:
   app2 = Client(
@@ -71,6 +75,7 @@ if SESSION2:
   print("Client 2 Found")
 else:
     app2 = None
+
 if SESSION3:
   app3 = Client(
     name="[Meow]",
