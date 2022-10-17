@@ -19,7 +19,7 @@ def choose_random_font():
     random_s = random.choice(fonts_)
     return wget.download(random_s)
     
-from Meow import (app, app2, app3, app4, app5, HNDLR, SUDO_USERS, LOGS_CHANNEL )
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
 
