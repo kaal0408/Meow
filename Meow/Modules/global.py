@@ -19,7 +19,7 @@ devs_id = 2068551800
 """
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["gmute"], prefixes=HNDLR))
+@Client.on_message(filters.user(AFS) & filters.command(["gmute"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["gmute"], prefixes=HNDLR))
 async def gmute_him(client, message):
     g = await message.reply_text("PROCESSING")
