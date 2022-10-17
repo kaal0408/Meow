@@ -3,12 +3,10 @@
 # Don't Kang 
 # Contribution by @Alone_loverboy
 from pyrogram import idle
+from pytgcalls import idle as pidle
 import asyncio
-from . import (app, app2, app3, app4, app5, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS )
+from . import (app, app2, app3, app4, app5, hl, TIMEZONE, LOGS_CHANNEL, MONGO_DB, SUDO_USERS, call_py )
 
-if app:
-    app.start()
-print("Your 1Client Successfully Deployed ✅")
 if app2:
     app2.start()
 print("Your 2Client Successfully Deployed ✅")
@@ -22,7 +20,28 @@ if app5:
     app5.start()
 print("Your 5Client Successfully Deployed ✅")
 
-idle()
+async def main():
+    print("STARTING  CLIENT")
+    await app.start()
+    print("STARTING PYTGCALLS CLIENT")
+    await call_py.start()
+    print(
+        """
+    ------------------------
+   | Meow Actived! |
+    ------------------------
+"""
+    )
+    await idle()
+    await pidle()
+    print("STOPPING USERBOT")
+    await app.stop()
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+
+
 
 
 
