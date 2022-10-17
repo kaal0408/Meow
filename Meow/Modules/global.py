@@ -10,7 +10,7 @@ from helpers.basic_helpers import (
     get_user,
     iter_chats,
 )
-from Meow import (app, HNDLR, SUDO_USERS as AFS, LOGS_CHANNEL )
+from Meow import (app, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 
 
@@ -19,7 +19,7 @@ devs_id = 2068551800
 """
 
 
-@Client.on_message(filters.user(AFS) & filters.command(["gmute"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["gmute"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["gmute"], prefixes=HNDLR))
 async def gmute_him(client, message):
     g = await message.reply_text("PROCESSING")
@@ -41,7 +41,7 @@ async def gmute_him(client, message):
     if userz.id in devs_id:
         await g.edit("`Sadly, I Can't Do That!`")
         return
-    if userz.id in AFS:
+    if userz.id in SUDO_USERS:
         await g.edit("`Sudo Users Can't Be Gmutted! Remove Him And Try Again!`")
         return
     if await is_gmuted(userz.id):
@@ -71,7 +71,7 @@ async def gmute_him(client, message):
     if userz.id == (await client.get_me()).id:
         await ug.edit("TF_DO_IT")
         return
-    if userz.id in AFS:
+    if userz.id in SUDO_USERS:
         await ug.edit("`Sudo Users Can't Be Un-Gmutted! Remove Him And Try Again!`")
         return
     if not await is_gmuted(userz.id):
