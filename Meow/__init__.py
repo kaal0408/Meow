@@ -24,10 +24,6 @@ ALIVE_PIC = os.getenv("ALIVE_PIC", "")
 ALIVE_MSG = os.getenv("ALIVE_MSG", "")
 PING_MSG = os.getenv("PING_MSG", "")
 SESSION = os.getenv("SESSION", None)
-SESSION2 = os.getenv("SESSION2", None)
-SESSION3 = os.getenv("SESSION3", None)
-SESSION4 = os.getenv("SESSION4", None)
-SESSION5 = os.getenv("SESSION5", None)
 TIMEZONE = os.environ.get("TIMEZONE", "Asia/Kolkata")
 LOGS_CHANNEL = os.getenv("LOGS_CHANNEL", None)
 MONGO_DB = os.environ.get("MONGO_DB", "")
@@ -61,57 +57,10 @@ if SESSION:
    print("Client 1 Found")
 else: 
    app = none
+
 call_py = PyTgCalls(app)
 
-if SESSION2:
-  app2 = Client(
-    name="[Meow]",
-    session_string=SESSION2,
-    api_id=API_ID,
-    api_hash=API_HASH,
-    in_memory=True,
-    plugins={'root': 'Meow.Modules'}
-)
-  print("Client 2 Found")
-else:
-    app2 = None
 
-if SESSION3:
-  app3 = Client(
-    name="[Meow]",
-    session_string=SESSION3,
-    api_id=API_ID,
-    api_hash=API_HASH,
-    in_memory=True,
-    plugins={'root': 'Meow.Modules'}
-)
-  print("Client 3 Found")
-else:
-    app3 = None
-if SESSION4:
-  app4 = Client(
-    name="[Meow]",
-    session_string=SESSION4,
-    api_id=API_ID,
-    api_hash=API_HASH,
-    in_memory=True,
-    plugins={'root': 'Meow.Modules'}
-)
-  print("Client 4 Found")
-else:
-    app4 = None
-if SESSION5:
-  app5 = Client(
-    name="[Meow]",
-    session_string=SESSION5,
-    api_id=API_ID,
-    api_hash=API_HASH,
-    in_memory=True,
-    plugins={'root': 'Meow.Modules'}
-)
-  print("Client 5 Found")
-else:
-   app5 = None
 
 
 
