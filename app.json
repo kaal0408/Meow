@@ -29,26 +29,6 @@
         "value": "",
         "required": true
       },
-      "SESSION2": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION3": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION4": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
-      "SESSION5": {
-        "description": "PYROGRAM SESSION Session",
-        "value": "",
-        "required": false
-      },
       "MONGO_DB": {
         "description": "enter your mongo database",
         "value": "",
@@ -59,20 +39,10 @@
             "value": "5174965229",
             "required": false
        },
-       "LOGS_CHANNEL": {
-            "description": "Logs Group ID (Make A Private Group And Add Your All Spam id Their)",
+      "LOGS_CHANNEL": {
+            "description": "Your Spam Userbot's Logs channel",
             "value": "-1001547159095",
-            "required": false
-        },
-       "TIMEZONE": {
-            "description": "Your Country Time Zone!\nGet yours from: https://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-            "required": false,
-            "value": "Asia/Kolkata"
-        },
-      "HNDLR": {
-            "description": "Your Spam Userbot's Command handler",
-            "value": ".",
-            "required": false  
+            "required": true  
         }
     },
   "addons": [
