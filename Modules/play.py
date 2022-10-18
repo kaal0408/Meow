@@ -12,9 +12,9 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from youtubesearchpython import VideosSearch
-from MusicRioUserbot.helpers.decorators import authorized_users_only
+from Modules.helpers.decorators import authorized_users_only
 from config import HNDLR, bot, call_py
-from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
+from Modules.helpers.queues import QUEUE, add_to_queue, get_queue
 from config import SUDO_USERS
 
 AMBILFOTO = ["https://telegra.ph/file/896bfc363cf082ae32592.jpg",]
@@ -90,7 +90,7 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-
+@Client.on_message(filters.me & filters.command(["play"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
@@ -198,6 +198,7 @@ async def play(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
+@Client.on_message(filters.me & filters.command(["videoplay", "vplay"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["videoplay", "vplay"], prefixes=f"{HNDLR}"))
 async def videoplay(client, m: Message):
     replied = m.reply_to_message
@@ -324,7 +325,7 @@ async def videoplay(client, m: Message):
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
-
+@Client.on_message(filters.me & filters.command(["playfrom"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["playfrom"], prefixes=f"{HNDLR}"))
 async def playfrom(client, m: Message):
     chat_id = m.chat.id
@@ -378,6 +379,7 @@ async def playfrom(client, m: Message):
             await hmm.edit(f"**ERROR** \n`{e}`")
 
 
+@Client.on_message(filters.me & filters.command(["playlist", "queue"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["playlist", "queue"], prefixes=f"{HNDLR}"))
 async def playlist(client, m: Message):
     chat_id = m.chat.id
