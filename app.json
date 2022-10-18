@@ -1,28 +1,28 @@
 {
-    "name": "MusicUserbot",
-    "description": "MusicUserBot Untuk Memutar Lagu Dan Video Di Obrolan Suara Telegram.",
+    "name": "MeowUserbot",
+    "description": "Pyrogram userbot with music system.",
     "logo": "",
     "keywords": [
         "Telegram",
         "MusicPlayer",
         "VideoPlayer"
     ],
-    "repository": "https://github.com/RioProjectX/VC-Userbot",
+    "repository": "https://github.com/kaal0408/Meow",
     "env": {
         "SESSION": {
             "description": "Pyrogram String Session",
             "required": true
         },
         "API_ID": {
-            "description": "Masukan APP ID Silahkan Ambil dari my.telegram.org/apps",
+            "description": " APP ID fill here my.telegram.org/apps",
             "required": true
         },
         "API_HASH": {
-            "description": "Masukan API HASH Silahkan Ambil dari my.telegram.org/apps",
+            "description": "API hash fill here my.telegram.org/apps",
             "required": true
         },
         "SUDO_USERS": {
-            "description": "Daftar User ID pengguna dihitung sebagai admin di semua tempat (pemisah menggunakan space)",
+            "description": "fill sudo user for VC plugin ",
             "required": true
         }
     },
