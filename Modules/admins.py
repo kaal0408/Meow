@@ -1,12 +1,13 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import HNDLR, call_py
-from MusicRioUserbot.helpers.decorators import authorized_users_only
-from MusicRioUserbot.helpers.handlers import skip_current_song, skip_item
-from MusicRioUserbot.helpers.queues import QUEUE, clear_queue
+from Modules.helpers.decorators import authorized_users_only
+from Modules.helpers.handlers import skip_current_song, skip_item
+from Modules.helpers.queues import QUEUE, clear_queue
 from config import SUDO_USERS
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
 async def skip(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -40,7 +41,7 @@ async def skip(client, m: Message):
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["end", "stop"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
 async def stop(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -56,6 +57,7 @@ async def stop(client, m: Message):
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
 async def pause(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -72,7 +74,7 @@ async def pause(client, m: Message):
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
 async def resume(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
