@@ -38,7 +38,7 @@ contact_filter = filters.create(
 )
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
 #----------------------------------------------
-bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="MusicRioUserbot"))
+bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="Modules"))
 call_py = PyTgCalls(bot)
 
 # Terms
