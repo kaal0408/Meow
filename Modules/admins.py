@@ -57,7 +57,7 @@ async def stop(client, m: Message):
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=f"{HNDLR}"))
-@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["pause"], prefixes=f"{HNDLR}"))
 async def pause(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
