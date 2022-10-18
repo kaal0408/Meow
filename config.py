@@ -26,12 +26,6 @@ ALIVE_PIC = os.getenv("ALIVE_PIC", "")
 ALIVE_MSG = os.getenv("ALIVE_MSG", "")
 PING_MSG = os.getenv("PING_MSG", "")
 
-sudo = os.getenv("SUDO_USERS")
-
-SUDO_USERS = []
-if sudo:
-    SUDO_USERS = make_int(sudo)
-
 contact_filter = filters.create(
     lambda _, __, message: (message.from_user and message.from_user.is_contact)
     or message.outgoing
