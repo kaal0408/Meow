@@ -41,7 +41,7 @@ async def skip(client, m: Message):
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["end", "stop"], prefixes=f"{HNDLR}"))
-@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["end", "stop"], prefixes=f"{HNDLR}"))
 async def stop(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -74,7 +74,7 @@ async def pause(client, m: Message):
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client.on_message(filters.me & filters.command(["skip"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["resume"], prefixes=f"{HNDLR}"))
 async def resume(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
