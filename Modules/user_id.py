@@ -16,16 +16,16 @@ async def showid(_, message: Message):
 
     elif chat_type in ["group", "supergroup"]:
         _id = ""
-        _id += "<b>ID group adalah</b>: " f"<code>{message.chat.id}</code>\n"
+        _id += "<b>Group id</b>: " f"<code>{message.chat.id}</code>\n"
         if message.reply_to_message:
             _id += (
-                "<b>ID pengguna yang dibalas adalah</b>: "
+                "<b>Message user id</b>: "
                 f"<code>{message.reply_to_message.from_user.id}</code>\n"
             )
             file_info = get_file_id(message.reply_to_message)
         else:
             _id += (
-                "<b>ID pengguna adalah</b>: " f"<code>{message.from_user.id}</code>\n"
+                "<b>Group id</b>: " f"<code>{message.from_user.id}</code>\n"
             )
             file_info = get_file_id(message)
         if file_info:
