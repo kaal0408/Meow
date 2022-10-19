@@ -14,7 +14,7 @@ from yt_dlp import YoutubeDL
 from config import HNDLR
 from config import SUDO_USERS
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["song", "music"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["song", "music"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["song", "music"], prefixes=f"{HNDLR}"))
 async def song(client, message: Message):
     urlissed = get_text(message)
@@ -63,7 +63,7 @@ async def song(client, message: Message):
         return
     c_time = time.time()
     capy = f"""
-**❤️‍🔥 Song Nama L:** [{thum}]({mo})
+**❤️‍🔥 Song Name :** [{thum}]({mo})
 **🗃️ Request by:** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
@@ -229,7 +229,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["vsong", "video"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.me & filters.command(["vsong", "video"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["vsong", "video"], prefixes=f"{HNDLR}"))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
