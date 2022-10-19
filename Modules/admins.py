@@ -14,17 +14,17 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("**❌ Tidak ada apapun didalam antrian untuk dilewati!**")
+            await m.reply("**❌ Try again!**")
         elif op == 1:
-            await m.reply("Antrian Kosong, Meninggalkan Obrolan Suara**")
+            await m.reply("Skip done**")
         else:
             await m.reply(
-                f"**⏭ Melewati pemutaran** \n**🎵 Sekarang memutar** - [{op[0]}]({op[1]}) | `{op[2]}`",
+                f"**⏭ song name** \n**🎵 Now** - [{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
             )
     else:
         skip = m.text.split(None, 1)[1]
-        OP = "**🗑️ Menghapus lagu-lagu berikut dari Antrian: -**"
+        OP = "**🗑️ Give name to skip: -**"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
@@ -49,11 +49,11 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**✅ Mengakhiri pemutaran**")
+            await m.reply("**✅ stoped **")
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**❌ Tidak ada apapun yang sedang diputar!**")
+        await m.reply("**❌ Try again!**")
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=f"{HNDLR}"))
@@ -65,12 +65,12 @@ async def pause(client, m: Message):
         try:
             await call_py.pause_stream(chat_id)
             await m.reply(
-                f"**⏸ Pemutaran dijeda.**\n\n• Untuk melanjutkan pemutaran, gunakan perintah » {HNDLR}resume"
+                f"**⏸ Pause.**\n\n• give command to play again » {HNDLR}resume"
             )
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("** ❌ Tidak ada apapun yang sedang diputar!**")
+        await m.reply("** ❌ Try again!**")
 
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=f"{HNDLR}"))
@@ -82,9 +82,9 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                f"**▶ Melanjutkan pemutaran yang dijeda**\n\n• Untuk menjeda pemutaran, gunakan perintah » {HNDLR}pause**"
+                f"**▶ resumed**\n\n• Give command » {HNDLR}pause**"
             )
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**❌ Tidak ada apapun yang sedang dijeda!**")
+        await m.reply("**❌ Try again!**")
