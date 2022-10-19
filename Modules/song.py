@@ -14,7 +14,7 @@ from yt_dlp import YoutubeDL
 from config import HNDLR
 from config import SUDO_USERS
 
-@Client.on_message(filters.me & filters.command(["id"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["song", "music"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["song", "music"], prefixes=f"{HNDLR}"))
 async def song(client, message: Message):
     urlissed = get_text(message)
@@ -229,12 +229,12 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.me & filters.command(["id"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["vsong", "video"], prefixes=f"{HNDLR}"))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["vsong", "video"], prefixes=f"{HNDLR}"))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
 
-    pablo = await client.send_message(message.chat.id, f"**🔎 Mencari** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"**🔎 searching** `{urlissed}`")
     if not urlissed:
         await pablo.edit(
             "Give me a valid name !"
@@ -268,7 +268,7 @@ async def vsong(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url, download=True)
     except Exception as e:
-        await event.edit(event, f"**Gagal Mengunduh** \n**Kesalahan :** `{str(e)}`")
+        await event.edit(event, f"**Loaded** \n**done :** `{str(e)}`")
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
