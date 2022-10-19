@@ -116,10 +116,10 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/18d25616d9883400af112.png",
                     caption=f"""
-**▶ Lagu Di Antrian Ke {pos}
-🏷 Judul: [{songname}]
+**▶ Now playing {pos}
+🏷 Song name: [{songname}]
 💡 Status: Playing
-🎧 Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                 )
             else:
@@ -136,10 +136,10 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/18d25616d9883400af112.png",
                     caption=f"""
-**▶ Mulai Memutar Lagu
-🏷 Judul: [{songname}]
+**▶ Now playing
+🏷 Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                 )
 
@@ -167,10 +167,10 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**▶ Lagu Di Antrian Ke {pos}
-🏷 Judul: [{songname}]
+**▶ Now playing {pos}
+🏷 Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                         )
                     else:
@@ -188,10 +188,10 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
-**▶ Mulai Memutar Lagu
-🏷️ Judul: [{songname}]
+**▶ Now playing
+🏷️ Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -236,10 +236,10 @@ async def videoplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/18d25616d9883400af112.png",
                     caption=f"""
-**▶ Video Di Antrian Ke {pos}
-🏷️ Judul: [{songname}]
+**▶ Now playing video {pos}
+🏷️ Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                 )
             else:
@@ -260,10 +260,10 @@ async def videoplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/18d25616d9883400af112.png",
                     caption=f"""
-**▶ Mulai Memutar Video
-🏷️ Judul: [{songname}]
+**▶ Now playing Video
+🏷️ Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                 )
 
@@ -297,10 +297,10 @@ async def videoplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**▶ Video Di Antrian Ke {pos}
-🏷️ Judul: [{songname}]
+**▶ Now Playing video {pos}
+🏷️ Song name : [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                         )
                     else:
@@ -316,10 +316,10 @@ async def videoplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
-**▶ Mulai Memutar Video
-🏷️ Judul: [{songname}]
+**▶ Now playing video
+🏷️ Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -331,7 +331,7 @@ async def playfrom(client, m: Message):
     chat_id = m.chat.id
     if len(m.command) < 2:
         await m.reply(
-            f"**PENGGUNAAN:** \n\n`{HNDLR}playfrom [chat_id/username]` \n`{HNDLR}playfrom [chat_id/username]`"
+            f"**Playform:** \n\n`{HNDLR}playfrom [chat_id/username]` \n`{HNDLR}playfrom [chat_id/username]`"
         )
     else:
         args = m.text.split(maxsplit=1)[1]
@@ -343,7 +343,7 @@ async def playfrom(client, m: Message):
             limit = 10
             lmt = 9
         await m.delete()
-        hmm = await m.reply(f"**✧ Mengambil {limit} Lagu Acak Dari {chat}**")
+        hmm = await m.reply(f"**✧ Duration {limit} playing {chat}**")
         try:
             async for x in bot.search_messages(chat, limit=limit, filter="audio"):
                 location = await x.download()
@@ -365,15 +365,15 @@ async def playfrom(client, m: Message):
                     await m.reply_photo(
                         photo="https://telegra.ph/file/18d25616d9883400af112.png",
                         caption=f"""
-**▶ Mulai Memutar Lagu Dari {chat}
-🏷️ Judul: [{songname}]
+**▶ Now playing {chat}
+🏷️ Song name: [{songname}]
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 Request by: {m.from_user.mention}**
 """,
                     )
             await hmm.delete()
             await m.reply(
-                f"âž• Menambahkan {lmt} Lagu Ke Dalam Antrian\nâ€¢ Klik {HNDLR}playlist Untuk Melihat Daftar Putar**"
+                f"âž• it's duration {lmt} sir\nâ€¢ Klik {HNDLR}playlist to add playlist**"
             )
         except Exception as e:
             await hmm.edit(f"**ERROR** \n`{e}`")
@@ -388,7 +388,7 @@ async def playlist(client, m: Message):
         if len(chat_queue) == 1:
             await m.delete()
             await m.reply(
-                f"**✧ SEKARANG MEMUTAR:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
+                f"**✧ Starting playing:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
                 disable_web_page_preview=True,
             )
         else:
@@ -401,4 +401,4 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**✧ Tidak Memutar Apapun...**")
+        await m.reply("**✧ Done...**")
