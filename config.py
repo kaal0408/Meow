@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
 
+__version__ = "v0.1"
 
 if os.path.exists(".env"):
     load_dotenv(".env")
