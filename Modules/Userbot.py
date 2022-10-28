@@ -79,17 +79,14 @@ async def alive(xspam: Client, e: Message):
 
 
 
+
+
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["restart", "reboot"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["restart", "reboot"], prefixes=HNDLR))
-async def reboot(xspam: Client, e: Message):
-        reboot_text = "**Re-starting** \n\n __Wait For A While To Use it Again__ "
-        await e.reply_text(reboot_text)
-        try:
-            xspam.disconnect()
-        except Exception as e:
-            pass
-        args = [sys.executable, "main.py]
-        os.execl(sys.executable, *args)
-        quit()
-
+async def restart_bot(_, message: Message):
+    msg = await message.reply("`restarting bot...`")
+    args = [sys.executable, "main.py"]
+    await msg.edit("✅ bot restarted\n\n• now you can use this bot again.")
+    execle(sys.executable, *args, environ)
+    return
             
