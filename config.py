@@ -25,6 +25,7 @@ SUDO_USERS = list(map(int, os.getenv("SUDO_USERS").split()))
 ALIVE_PIC = os.getenv("ALIVE_PIC", "")
 ALIVE_MSG = os.getenv("ALIVE_MSG", "")
 PING_MSG = os.getenv("PING_MSG", "")
+LOGS_CHANNEL = os.getenv("LOGS_CHANNEL", None)
 
 contact_filter = filters.create(
     lambda _, __, message: (message.from_user and message.from_user.is_contact)
