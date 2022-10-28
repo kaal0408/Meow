@@ -7,7 +7,7 @@ from random import choice
 from config import (bot, HNDLR, SUDO_USERS, LOGS_CHANNEL )
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Meow.helpers.data import *
+from Modules.helpers.data import *
 
 Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help owner`"
 Media = "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
