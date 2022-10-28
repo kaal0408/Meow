@@ -8,7 +8,7 @@ from random import choice
 from config import (bot, HNDLR, SUDO_USERS, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Meow.helpers.data import *
+from Modules.helpers.data import *
 
 
 usage = f"** ❌ Wrong Usage ❌** \n Type `{HNDLR}help spam`"
