@@ -21,6 +21,18 @@
             "description": "API hash fill here my.telegram.org/apps",
             "required": true
         },
+        "AlIVE_MSG": {
+            "description": "Enter your alive msg",
+            "required": false
+        },
+        "ALIVE_PIC": {
+            "description": " Enter your alive pic",
+            "required": false
+        },
+        "PING_MSG": {
+            "description": "Enter your ping msg",
+            "required": false
+        },
         "SUDO_USERS": {
             "description": "fill sudo user for VC plugin ",
             "required": true
