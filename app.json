@@ -21,6 +21,10 @@
             "description": "API hash fill here my.telegram.org/apps",
             "required": true
         },
+        "HNDLR": {
+            "description": "put your command handler ,leave it if u use . as a command handler",
+            "required": false
+        },
         "AlIVE_MSG": {
             "description": "Enter your alive msg",
             "required": false
