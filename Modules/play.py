@@ -145,7 +145,7 @@ async def play(client, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply("Balas ke File Audio atau berikan sesuatu untuk Pencarian")
+            await m.reply("Please check you have typed the word correctly ")
         else:
             await m.delete()
             huehue = await m.reply("**✧ Sedang Mencari Lagu... Mohon Bersabar**")
@@ -270,7 +270,7 @@ async def videoplay(client, m: Message):
     else:
         if len(m.command) < 2:
             await m.reply(
-                "**Balas ke File Audio atau berikan sesuatu untuk Pencarian**"
+                "** Please check you have typed the word correctly **"
             )
         else:
             await m.delete()
