@@ -207,7 +207,7 @@ async def videoplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**✧ Memproses Video....**")
+            huehue = await replied.reply("**✧ searching Video....**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -219,8 +219,7 @@ async def videoplay(client, m: Message):
                 else:
                     Q = 720
                     await huehue.edit(
-                        "`Hanya 720, 480, 360 Diizinkan` \n`Sekarang Streaming masuk 720p`"
-                    )
+                        "We cannot find any entries matching `file 720, 480, 360 ` \n`So we use 720p " )
             try:
                 if replied.video:
                     songname = replied.video.file_name[:70]
@@ -281,7 +280,7 @@ async def videoplay(client, m: Message):
             hmmm = HighQualityVideo()
             if search == 0:
                 await huehue.edit(
-                    "**Tidak Menemukan Apa pun untuk Kueri yang Diberikan**"
+                    "**Please check your songs name**"
                 )
             else:
                 songname = search[0]
@@ -373,7 +372,7 @@ async def playfrom(client, m: Message):
                     )
             await hmm.delete()
             await m.reply(
-                f"âž• it's duration {lmt} sir\nâ€¢ Klik {HNDLR}playlist to add playlist**"
+                f"âž• it's duration {lmt} sir\nâ€¢ click {HNDLR}playlist to add playlist**"
             )
         except Exception as e:
             await hmm.edit(f"**ERROR** \n`{e}`")
