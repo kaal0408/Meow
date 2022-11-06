@@ -148,7 +148,7 @@ async def play(client, m: Message):
             await m.reply("Please check you have typed the word correctly ")
         else:
             await m.delete()
-            huehue = await m.reply("**✧ Sedang Mencari Lagu... Mohon Bersabar**")
+            huehue = await m.reply("**✧Your search terms did not match any entries**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -274,7 +274,7 @@ async def videoplay(client, m: Message):
             )
         else:
             await m.delete()
-            huehue = await m.reply("**ðŸ”Ž Pencarian Lagu... Mohon Bersabar**")
+            huehue = await m.reply("** Your search terms did not match any entries **")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
