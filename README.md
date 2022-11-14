@@ -25,7 +25,7 @@ Commands of Meow userbot
 
 - **skip - To skip the song in vc **
 
-- **end - To end the song in vc**
+- **end - To end the song in vc **
 
 resume - To resume the song in vc
 
