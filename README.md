@@ -16,6 +16,8 @@ https://replit.com/@dashezup/generate-pyrogram-session-string
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/kaal0408/Meow">
   <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-aqua?style=flat&logo=heroku" width="325" height="50.100" /></a></p>
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/UJhak0)
+
 Credit - RiZoeL Repo For some plugin
 
 
