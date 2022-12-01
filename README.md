@@ -1,3 +1,4 @@
+
 # Meow userbot + music system
 it's pyrogram userbot made with love
 
@@ -98,3 +99,5 @@ Credit - RiZoeL Repo For some plugin
 - **unpin- To unpin msg **
 
 - **inviteall - For member adding **
+
+<h2 align="Owner"><b>Owner <a href="https://t.me/Hayat_Murat_30">Manjeet</a></b></h2>
