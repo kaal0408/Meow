@@ -1,4 +1,3 @@
-
 # Meow userbot + music system
 it's pyrogram userbot made with love
 
@@ -101,3 +100,4 @@ Credit - RiZoeL Repo For some plugin
 - **inviteall - For member adding **
 
 <h2 align="Owner"><b>Owner <a href="https://t.me/Hayat_Murat_30">Manjeet</a></b></h2>
+<h2 align="Owner"><b>Owner <a href="https://github.com/DynamicAdi">Loverboy</a></b></h2>
