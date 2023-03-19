@@ -1,3 +1,4 @@
+python-3.10.6
 TgCrypto
 pyrogram==1.4.16 
 py-tgcalls==0.8.5
